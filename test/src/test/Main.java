@@ -191,6 +191,12 @@ public class Main extends JFrame {
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
+			boolean[] columnEditables = new boolean[] {
+				false, true, true, true
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
 		});
 		table_meteo.getColumnModel().getColumn(0).setResizable(false);
 		table_meteo.getColumnModel().getColumn(0).setPreferredWidth(60);
@@ -199,7 +205,7 @@ public class Main extends JFrame {
 		table_meteo.getColumnModel().getColumn(2).setResizable(false);
 		table_meteo.getColumnModel().getColumn(2).setPreferredWidth(60);
 		table_meteo.getColumnModel().getColumn(3).setResizable(false);
-		table_meteo.getColumnModel().getColumn(3).setPreferredWidth(60);		
+		table_meteo.getColumnModel().getColumn(3).setPreferredWidth(60);
 		table_meteo.setBounds(66, 68, 318, 168);
 		panel_meteoSered.add(table_meteo);
 		
