@@ -18,7 +18,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.ListSelectionModel;
 
 public class Main extends JFrame {
-
 	private JPanel contentPane;
 	private JTextField textField_meteoGP_1;
 	private JTextField textField_meteoGP_2;
