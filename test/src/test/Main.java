@@ -135,6 +135,7 @@ public class Main extends JFrame {
 	private JLabel label_53;
 	private JButton button_1;
 	private JButton button_2;
+	private JPanel panel_meteoNablyzhBP2;
 
 	/**
 	 * Launch the application.
@@ -178,7 +179,7 @@ public class Main extends JFrame {
 		panel_meteo.add(tabbedPane_meteo);
 		
 		JPanel panel_meteoNablyzh = new JPanel();
-		tabbedPane_meteo.addTab("Метеонаближений", null, panel_meteoNablyzh, null);
+		tabbedPane_meteo.addTab("Складання бюлетеня \"Метеонаближений\" з ДМК", null, panel_meteoNablyzh, null);
 		panel_meteoNablyzh.setLayout(null);
 		
 		JButton button_meteoNB = new JButton("\u0417\u0430\u0441\u0442\u043E\u0441\u0443\u0432\u0430\u0442\u0438");
@@ -657,87 +658,8 @@ public class Main extends JFrame {
 		textField_62.setText("00");
 		textField_62.setColumns(10);
 		
-		JPanel panel_meteoPopravky = new JPanel();
-		tabbedPane_meteo.addTab("Введення готових поправок", null, panel_meteoPopravky, null);
-		panel_meteoPopravky.setLayout(null);
-		
-		textField_meteoGP_1 = new JTextField();
-		textField_meteoGP_1.setBackground(Color.YELLOW);
-		textField_meteoGP_1.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_meteoGP_1.setText("5");
-		textField_meteoGP_1.setColumns(10);
-		textField_meteoGP_1.setBounds(67, 55, 72, 20);
-		panel_meteoPopravky.add(textField_meteoGP_1);
-		
-		JLabel label_meteoGP_1 = new JLabel("d");
-		label_meteoGP_1.setBounds(10, 58, 45, 14);
-		panel_meteoPopravky.add(label_meteoGP_1);
-		
-		textField_meteoGP_2 = new JTextField();
-		textField_meteoGP_2.setBackground(Color.YELLOW);
-		textField_meteoGP_2.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_meteoGP_2.setText("8");
-		textField_meteoGP_2.setColumns(10);
-		textField_meteoGP_2.setBounds(153, 55, 72, 20);
-		panel_meteoPopravky.add(textField_meteoGP_2);
-		
-		textField_meteoGP_3 = new JTextField();
-		textField_meteoGP_3.setBackground(Color.YELLOW);
-		textField_meteoGP_3.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_meteoGP_3.setText("11");
-		textField_meteoGP_3.setColumns(10);
-		textField_meteoGP_3.setBounds(239, 55, 72, 20);
-		panel_meteoPopravky.add(textField_meteoGP_3);
-		
-		JLabel label_meteoGP_2 = new JLabel("\u0394 d");
-		label_meteoGP_2.setBounds(10, 86, 45, 14);
-		panel_meteoPopravky.add(label_meteoGP_2);
-		
-		textField_meteoGP_4 = new JTextField();
-		textField_meteoGP_4.setColumns(10);
-		textField_meteoGP_4.setBounds(67, 83, 72, 20);
-		panel_meteoPopravky.add(textField_meteoGP_4);
-		
-		textField_meteoGP_5 = new JTextField();
-		textField_meteoGP_5.setColumns(10);
-		textField_meteoGP_5.setBounds(153, 83, 72, 20);
-		panel_meteoPopravky.add(textField_meteoGP_5);
-		
-		textField_meteoGP_6 = new JTextField();
-		textField_meteoGP_6.setColumns(10);
-		textField_meteoGP_6.setBounds(239, 83, 72, 20);
-		panel_meteoPopravky.add(textField_meteoGP_6);
-		
-		JLabel label_meteoGP_3 = new JLabel("\u0394 \u03C3");
-		label_meteoGP_3.setBounds(10, 114, 45, 14);
-		panel_meteoPopravky.add(label_meteoGP_3);
-		
-		textField_meteoGP_7 = new JTextField();
-		textField_meteoGP_7.setColumns(10);
-		textField_meteoGP_7.setBounds(67, 111, 72, 20);
-		panel_meteoPopravky.add(textField_meteoGP_7);
-		
-		textField_meteoGP_8 = new JTextField();
-		textField_meteoGP_8.setColumns(10);
-		textField_meteoGP_8.setBounds(153, 111, 72, 20);
-		panel_meteoPopravky.add(textField_meteoGP_8);
-		
-		textField_meteoGP_9 = new JTextField();
-		textField_meteoGP_9.setColumns(10);
-		textField_meteoGP_9.setBounds(239, 111, 72, 20);
-		panel_meteoPopravky.add(textField_meteoGP_9);
-		
-		JLabel lbli = new JLabel("\u0413\u043E\u0442\u043E\u0432i \u043F\u043E\u043F\u0440\u0430\u0432\u043A\u0438");
-		lbli.setForeground(Color.BLUE);
-		lbli.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lbli.setBounds(10, 11, 300, 14);
-		panel_meteoPopravky.add(lbli);
-		
-		button_1 = new JButton("\u0417\u0430\u0441\u0442\u043E\u0441\u0443\u0432\u0430\u0442\u0438");
-		button_1.setForeground(Color.WHITE);
-		button_1.setBackground(new Color(0, 0, 205));
-		button_1.setBounds(300, 160, 125, 39);
-		panel_meteoPopravky.add(button_1);
+		panel_meteoNablyzhBP2 = new JPanel();
+		tabbedPane_meteo.addTab("Складання бюлетеня \"Метеонаближений\" з ВР-2", null, panel_meteoNablyzhBP2, null);
 		
 		JPanel panel_meteoSered = new JPanel();
 		tabbedPane_meteo.addTab("Введення \"Метеосереднiй\"", null, panel_meteoSered, null);
@@ -1105,6 +1027,88 @@ public class Main extends JFrame {
 		button_2.setBackground(new Color(0, 0, 205));
 		button_2.setBounds(300, 400, 125, 39);
 		panel_meteoSered.add(button_2);
+		
+		JPanel panel_meteoPopravky = new JPanel();
+		tabbedPane_meteo.addTab("Введення готових поправок", null, panel_meteoPopravky, null);
+		panel_meteoPopravky.setLayout(null);
+		
+		textField_meteoGP_1 = new JTextField();
+		textField_meteoGP_1.setBackground(Color.YELLOW);
+		textField_meteoGP_1.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_meteoGP_1.setText("5");
+		textField_meteoGP_1.setColumns(10);
+		textField_meteoGP_1.setBounds(67, 55, 72, 20);
+		panel_meteoPopravky.add(textField_meteoGP_1);
+		
+		JLabel label_meteoGP_1 = new JLabel("d");
+		label_meteoGP_1.setBounds(10, 58, 45, 14);
+		panel_meteoPopravky.add(label_meteoGP_1);
+		
+		textField_meteoGP_2 = new JTextField();
+		textField_meteoGP_2.setBackground(Color.YELLOW);
+		textField_meteoGP_2.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_meteoGP_2.setText("8");
+		textField_meteoGP_2.setColumns(10);
+		textField_meteoGP_2.setBounds(153, 55, 72, 20);
+		panel_meteoPopravky.add(textField_meteoGP_2);
+		
+		textField_meteoGP_3 = new JTextField();
+		textField_meteoGP_3.setBackground(Color.YELLOW);
+		textField_meteoGP_3.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_meteoGP_3.setText("11");
+		textField_meteoGP_3.setColumns(10);
+		textField_meteoGP_3.setBounds(239, 55, 72, 20);
+		panel_meteoPopravky.add(textField_meteoGP_3);
+		
+		JLabel label_meteoGP_2 = new JLabel("\u0394 d");
+		label_meteoGP_2.setBounds(10, 86, 45, 14);
+		panel_meteoPopravky.add(label_meteoGP_2);
+		
+		textField_meteoGP_4 = new JTextField();
+		textField_meteoGP_4.setColumns(10);
+		textField_meteoGP_4.setBounds(67, 83, 72, 20);
+		panel_meteoPopravky.add(textField_meteoGP_4);
+		
+		textField_meteoGP_5 = new JTextField();
+		textField_meteoGP_5.setColumns(10);
+		textField_meteoGP_5.setBounds(153, 83, 72, 20);
+		panel_meteoPopravky.add(textField_meteoGP_5);
+		
+		textField_meteoGP_6 = new JTextField();
+		textField_meteoGP_6.setColumns(10);
+		textField_meteoGP_6.setBounds(239, 83, 72, 20);
+		panel_meteoPopravky.add(textField_meteoGP_6);
+		
+		JLabel label_meteoGP_3 = new JLabel("\u0394 \u03C3");
+		label_meteoGP_3.setBounds(10, 114, 45, 14);
+		panel_meteoPopravky.add(label_meteoGP_3);
+		
+		textField_meteoGP_7 = new JTextField();
+		textField_meteoGP_7.setColumns(10);
+		textField_meteoGP_7.setBounds(67, 111, 72, 20);
+		panel_meteoPopravky.add(textField_meteoGP_7);
+		
+		textField_meteoGP_8 = new JTextField();
+		textField_meteoGP_8.setColumns(10);
+		textField_meteoGP_8.setBounds(153, 111, 72, 20);
+		panel_meteoPopravky.add(textField_meteoGP_8);
+		
+		textField_meteoGP_9 = new JTextField();
+		textField_meteoGP_9.setColumns(10);
+		textField_meteoGP_9.setBounds(239, 111, 72, 20);
+		panel_meteoPopravky.add(textField_meteoGP_9);
+		
+		JLabel lbli = new JLabel("\u0413\u043E\u0442\u043E\u0432i \u043F\u043E\u043F\u0440\u0430\u0432\u043A\u0438");
+		lbli.setForeground(Color.BLUE);
+		lbli.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lbli.setBounds(10, 11, 300, 14);
+		panel_meteoPopravky.add(lbli);
+		
+		button_1 = new JButton("\u0417\u0430\u0441\u0442\u043E\u0441\u0443\u0432\u0430\u0442\u0438");
+		button_1.setForeground(Color.WHITE);
+		button_1.setBackground(new Color(0, 0, 205));
+		button_1.setBounds(300, 160, 125, 39);
+		panel_meteoPopravky.add(button_1);
 		
 		JPanel panel_2 = new JPanel();
 		tabbedPane.addTab("ПП", null, panel_2, null);
