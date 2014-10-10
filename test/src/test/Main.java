@@ -25,7 +25,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.SwingConstants;
-
+//dfdsfdsfds
 public class Main extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField_meteoGP_1;
