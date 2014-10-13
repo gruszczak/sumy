@@ -25,6 +25,12 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.SwingConstants;
+import javax.swing.JPopupMenu;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JCheckBoxMenuItem;
+import java.awt.Choice;
+import java.awt.List;
 //dfdsfdsfds
 public class Main extends JFrame {
 	private JPanel contentPane;
@@ -136,6 +142,63 @@ public class Main extends JFrame {
 	private JButton button_1;
 	private JButton button_2;
 	private JPanel panel_meteoNablyzhBP2;
+	private JLabel label_52;
+	private JLabel label_54;
+	private JTextField KP1;
+	private JTextField X1;
+	private JTextField Y1;
+	private JTextField H1;
+	private JLabel label_57;
+	private JTextField KP2;
+	private JTextField X2;
+	private JTextField Y2;
+	private JTextField H2;
+	private JTextField KP8;
+	private JTextField KP3;
+	private JTextField X3;
+	private JTextField Y3;
+	private JTextField H3;
+	private JTextField X4;
+	private JTextField Y4;
+	private JTextField H4;
+	private JTextField KP5;
+	private JTextField X5;
+	private JTextField Y5;
+	private JTextField H5;
+	private JTextField KP6;
+	private JTextField X6;
+	private JTextField Y6;
+	private JTextField H6;
+	private JTextField KP_new_7;
+	private JTextField KP7;
+	private JTextField X7;
+	private JTextField Y7;
+	private JTextField H7;
+	private JTextField OH;
+	private JTextField dV0;
+	private JLabel label_69;
+	private JTextField Tz;
+	private JLabel lblNewLabel;
+	private JTextField Xb;
+	private JTextField Yb;
+	private JTextField hb;
+	private JLabel lblX_7;
+	private JLabel lblY_7;
+	private JLabel lblH_7;
+	private JTextField KB;
+	private JTextField NB;
+	private JLabel label_70;
+	private JLabel label_71;
+	private JLabel label_72;
+	private JLabel label_73;
+	private JLabel label_74;
+	private JLabel label_75;
+	private JLabel lblNewLabel_1;
+	private JLabel label_76;
+	private JTextField KA;
+	private JTextField NA;
+	private JTextField KG;
+	private JTextField No;
 
 	/**
 	 * Launch the application.
@@ -146,6 +209,7 @@ public class Main extends JFrame {
 				try {
 					Main frame = new Main();
 					frame.setVisible(true);
+					frame.setTitle("Art_Game");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -158,7 +222,7 @@ public class Main extends JFrame {
 	 */
 	public Main() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 859);
+		setBounds(100, 100, 1046, 772);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -170,6 +234,428 @@ public class Main extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setToolTipText("");
 		tabbedPane.addTab("¡œ", null, panel, null);
+		panel.setLayout(null);
+		
+		label_54 = new JLabel("\u041A\u041E\u041C\u0410\u041D\u0414\u041D\u041E-\u0421\u041F\u041E\u0421\u0422\u0415\u0420\u0415\u0416\u041D\u0406 \u041F\u0423\u041D\u041A\u0422\u0418");
+		label_54.setBounds(393, 36, 267, 14);
+		label_54.setForeground(Color.RED);
+		panel.add(label_54);
+		
+		label_52 = new JLabel("\u0411\u041E\u0419\u041E\u0412\u0418\u0419 \u041F\u041E\u0420\u042F\u0414\u041E\u041A \u0411\u0410\u0422\u0410\u0420\u0415\u0407");
+		label_52.setBounds(405, 11, 182, 14);
+		label_52.setForeground(Color.BLACK);
+		panel.add(label_52);
+		
+		JLabel label_55 = new JLabel("\u041A\u0421\u041F \u0413\u0420\u0423\u041F\u0418");
+		label_55.setBounds(30, 62, 92, 14);
+		panel.add(label_55);
+		
+		KP1 = new JTextField();
+		KP1.setBounds(20, 87, 86, 20);
+		panel.add(KP1);
+		KP1.setColumns(10);
+		
+		X1 = new JTextField();
+		X1.setBounds(62, 118, 44, 20);
+		panel.add(X1);
+		X1.setColumns(10);
+		
+		Y1 = new JTextField();
+		Y1.setBounds(62, 145, 44, 20);
+		panel.add(Y1);
+		Y1.setColumns(10);
+		
+		H1 = new JTextField();
+		H1.setBounds(62, 176, 44, 20);
+		panel.add(H1);
+		H1.setColumns(10);
+		
+		JLabel lblX = new JLabel("X = ");
+		lblX.setBounds(20, 121, 32, 14);
+		panel.add(lblX);
+		
+		JLabel lblY = new JLabel("Y = ");
+		lblY.setBounds(20, 148, 32, 14);
+		panel.add(lblY);
+		
+		JLabel lblH = new JLabel("h = ");
+		lblH.setBounds(20, 179, 32, 14);
+		panel.add(lblH);
+		
+		JLabel label_56 = new JLabel("\u0410\u0440\u0442\u0438\u043B\u0435\u0440\u0456\u0439\u0441\u044C\u043A\u0430\r\n");
+		label_56.setBounds(22, 232, 124, 20);
+		panel.add(label_56);
+		
+		label_57 = new JLabel("\u0441\u0438\u0441\u0442\u0435\u043C\u0430");
+		label_57.setBounds(42, 250, 80, 14);
+		panel.add(label_57);
+		
+		JLabel label_58 = new JLabel("\u041A\u0421\u041F \u0414\u0418\u0412\u0406\u0417\u0406\u041E\u041D\u0423");
+		label_58.setBounds(132, 62, 103, 14);
+		panel.add(label_58);
+		
+		KP2 = new JTextField();
+		KP2.setBounds(132, 87, 86, 20);
+		panel.add(KP2);
+		KP2.setColumns(10);
+		
+		X2 = new JTextField();
+		X2.setBounds(174, 118, 44, 20);
+		panel.add(X2);
+		X2.setColumns(10);
+		
+		Y2 = new JTextField();
+		Y2.setBounds(174, 145, 44, 20);
+		panel.add(Y2);
+		Y2.setColumns(10);
+		
+		H2 = new JTextField();
+		H2.setBounds(174, 176, 44, 20);
+		panel.add(H2);
+		H2.setColumns(10);
+		
+		JLabel lblX_1 = new JLabel("X =");
+		lblX_1.setBounds(132, 121, 32, 14);
+		panel.add(lblX_1);
+		
+		JLabel lblY_1 = new JLabel("Y =");
+		lblY_1.setBounds(132, 148, 32, 14);
+		panel.add(lblY_1);
+		
+		JLabel lblH_1 = new JLabel("h =");
+		lblH_1.setBounds(132, 179, 32, 14);
+		panel.add(lblH_1);
+		
+		JLabel label_59 = new JLabel("\u0428\u0422\u0410\u0411 \u0414\u0418\u0412\u0406\u0417\u0406\u041E\u041D\u0423");
+		label_59.setBounds(245, 61, 113, 14);
+		panel.add(label_59);
+		
+		KP8 = new JTextField();
+		KP8.setBounds(245, 87, 86, 20);
+		panel.add(KP8);
+		KP8.setColumns(10);
+		
+		JLabel label_60 = new JLabel("\u041A\u0421\u0411 \u0411\u0410\u0422\u0410\u0420\u0415\u0407");
+		label_60.setBounds(368, 62, 80, 14);
+		panel.add(label_60);
+		
+		KP3 = new JTextField();
+		KP3.setBounds(362, 87, 86, 20);
+		panel.add(KP3);
+		KP3.setColumns(10);
+		
+		X3 = new JTextField();
+		X3.setBounds(405, 118, 44, 20);
+		panel.add(X3);
+		X3.setColumns(10);
+		
+		Y3 = new JTextField();
+		Y3.setBounds(405, 145, 44, 20);
+		panel.add(Y3);
+		Y3.setColumns(10);
+		
+		H3 = new JTextField();
+		H3.setBounds(405, 176, 44, 20);
+		panel.add(H3);
+		H3.setColumns(10);
+		
+		JLabel lblX_2 = new JLabel("X =");
+		lblX_2.setBounds(363, 121, 32, 14);
+		panel.add(lblX_2);
+		
+		JLabel lblY_2 = new JLabel("Y =");
+		lblY_2.setBounds(363, 148, 32, 14);
+		panel.add(lblY_2);
+		
+		JLabel lblH_2 = new JLabel("h =");
+		lblH_2.setBounds(363, 179, 32, 14);
+		panel.add(lblH_2);
+		
+		JLabel label_61 = new JLabel("\u0411\u0421\u041F");
+		label_61.setBounds(511, 62, 46, 14);
+		panel.add(label_61);
+		
+		JTextField KP4 = new JTextField();
+		KP4.setBounds(482, 87, 86, 20);
+		panel.add(KP4);
+		KP4.setColumns(10);
+		
+		X4 = new JTextField();
+		X4.setBounds(524, 118, 44, 20);
+		panel.add(X4);
+		X4.setColumns(10);
+		
+		Y4 = new JTextField();
+		Y4.setBounds(524, 145, 44, 20);
+		panel.add(Y4);
+		Y4.setColumns(10);
+		
+		H4 = new JTextField();
+		H4.setBounds(524, 176, 44, 20);
+		panel.add(H4);
+		H4.setColumns(10);
+		
+		JLabel lblX_3 = new JLabel("X =");
+		lblX_3.setBounds(482, 121, 32, 14);
+		panel.add(lblX_3);
+		
+		JLabel lblY_3 = new JLabel("Y =");
+		lblY_3.setBounds(482, 148, 32, 14);
+		panel.add(lblY_3);
+		
+		JLabel lblH_3 = new JLabel("h =");
+		lblH_3.setBounds(482, 179, 32, 14);
+		panel.add(lblH_3);
+		
+		JLabel label_62 = new JLabel("\u041F\u0421\u041F");
+		label_62.setBounds(614, 62, 46, 14);
+		panel.add(label_62);
+		
+		KP5 = new JTextField();
+		KP5.setBounds(598, 87, 86, 20);
+		panel.add(KP5);
+		KP5.setColumns(10);
+		
+		X5 = new JTextField();
+		X5.setBounds(640, 118, 44, 20);
+		panel.add(X5);
+		X5.setColumns(10);
+		
+		Y5 = new JTextField();
+		Y5.setBounds(640, 145, 44, 20);
+		panel.add(Y5);
+		Y5.setColumns(10);
+		
+		H5 = new JTextField();
+		H5.setBounds(640, 176, 44, 20);
+		panel.add(H5);
+		H5.setColumns(10);
+		
+		JLabel lblX_4 = new JLabel("X =");
+		lblX_4.setBounds(598, 121, 32, 14);
+		panel.add(lblX_4);
+		
+		JLabel lblY_4 = new JLabel("Y =");
+		lblY_4.setBounds(598, 148, 32, 14);
+		panel.add(lblY_4);
+		
+		JLabel lblH_4 = new JLabel("h =");
+		lblH_4.setBounds(598, 179, 32, 14);
+		panel.add(lblH_4);
+		
+		JLabel label_63 = new JLabel("\u0421\u041D\u0410\u0420");
+		label_63.setBounds(733, 62, 46, 14);
+		panel.add(label_63);
+		
+		KP6 = new JTextField();
+		KP6.setBounds(712, 87, 86, 20);
+		panel.add(KP6);
+		KP6.setColumns(10);
+		
+		X6 = new JTextField();
+		X6.setBounds(753, 118, 44, 20);
+		panel.add(X6);
+		X6.setColumns(10);
+		
+		Y6 = new JTextField();
+		Y6.setBounds(753, 145, 44, 20);
+		panel.add(Y6);
+		Y6.setColumns(10);
+		
+		H6 = new JTextField();
+		H6.setBounds(753, 176, 44, 20);
+		panel.add(H6);
+		H6.setColumns(10);
+		
+		JLabel lblX_5 = new JLabel("X =");
+		lblX_5.setBounds(711, 121, 32, 14);
+		panel.add(lblX_5);
+		
+		JLabel lblY_5 = new JLabel("Y =");
+		lblY_5.setBounds(711, 148, 32, 14);
+		panel.add(lblY_5);
+		
+		JLabel lblH_5 = new JLabel("h =");
+		lblH_5.setBounds(711, 179, 32, 14);
+		panel.add(lblH_5);
+		
+		KP_new_7 = new JTextField();
+		KP_new_7.setBounds(809, 59, 118, 20);
+		panel.add(KP_new_7);
+		KP_new_7.setColumns(10);
+		
+		KP7 = new JTextField();
+		KP7.setBounds(826, 87, 86, 20);
+		panel.add(KP7);
+		KP7.setColumns(10);
+		
+		X7 = new JTextField();
+		X7.setBounds(867, 118, 44, 20);
+		panel.add(X7);
+		X7.setColumns(10);
+		
+		Y7 = new JTextField();
+		Y7.setBounds(867, 145, 44, 20);
+		panel.add(Y7);
+		Y7.setColumns(10);
+		
+		H7 = new JTextField();
+		H7.setBounds(867, 176, 44, 20);
+		panel.add(H7);
+		H7.setColumns(10);
+		
+		JLabel lblX_6 = new JLabel("X =");
+		lblX_6.setBounds(825, 121, 32, 14);
+		panel.add(lblX_6);
+		
+		JLabel lblY_6 = new JLabel("Y =");
+		lblY_6.setBounds(825, 148, 32, 14);
+		panel.add(lblY_6);
+		
+		JLabel lblH_6 = new JLabel("h =");
+		lblH_6.setBounds(825, 179, 32, 14);
+		panel.add(lblH_6);
+		
+		JLabel label_64 = new JLabel("\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C");
+		label_64.setBounds(142, 235, 62, 14);
+		panel.add(label_64);
+		
+		JLabel label_65 = new JLabel("\u0431\u0430\u0442\u0430\u0440\u0435\u0439 \u0432 \u0430\u0434\u043D");
+		label_65.setBounds(132, 250, 86, 14);
+		panel.add(label_65);
+		
+		JLabel label_66 = new JLabel("\u041F\u043E\u0440\u044F\u0434\u043A\u043E\u0432\u0438\u0439 \u043D\u043E\u043C\u0435\u0440");
+		label_66.setBounds(245, 235, 113, 14);
+		panel.add(label_66);
+		
+		JLabel label_67 = new JLabel("\u0431\u0430\u0442\u0430\u0440\u0435\u0457 \u0432 \u0430\u0434\u043D");
+		label_67.setBounds(255, 250, 92, 14);
+		panel.add(label_67);
+		
+		JLabel label_68 = new JLabel("\u0412\u041E\u0413\u041D\u0415\u0412\u0410 \u041F\u041E\u0417\u0418\u0426\u0406\u042F \u0411\u0410\u0422\u0410\u0415\u0420\u0415\u0407 (\u0413\u0410\u0420\u041C\u0410\u0422)");
+		label_68.setForeground(new Color(255, 0, 0));
+		label_68.setBounds(546, 235, 311, 14);
+		panel.add(label_68);
+		
+		OH = new JTextField();
+		OH.setColumns(10);
+		OH.setBounds(524, 250, 44, 20);
+		panel.add(OH);
+		
+		JLabel lblAoh = new JLabel("aOH =");
+		lblAoh.setBounds(482, 253, 44, 14);
+		panel.add(lblAoh);
+		
+		JLabel dV = new JLabel("\u0394V0 \u0441\u0443\u043C =");
+		dV.setBounds(578, 253, 64, 14);
+		panel.add(dV);
+		
+		dV0 = new JTextField();
+		dV0.setColumns(10);
+		dV0.setBounds(640, 250, 44, 20);
+		panel.add(dV0);
+		
+		label_69 = new JLabel("\u0422\u0437 =");
+		label_69.setBounds(710, 253, 32, 14);
+		panel.add(label_69);
+		
+		Tz = new JTextField();
+		Tz.setColumns(10);
+		Tz.setBounds(735, 250, 44, 20);
+		panel.add(Tz);
+		
+		lblNewLabel = new JLabel("\u041A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u0438 \u0412\u043E\u0433\u043D\u0435\u0432\u043E\u0457 \u043F\u043E\u0437\u0438\u0446\u0456\u0457 \u0431\u0430\u0442\u0430\u0440\u0435\u0457");
+		lblNewLabel.setBounds(546, 281, 220, 14);
+		panel.add(lblNewLabel);
+		
+		Xb = new JTextField();
+		Xb.setColumns(10);
+		Xb.setBounds(524, 308, 44, 20);
+		panel.add(Xb);
+		
+		Yb = new JTextField();
+		Yb.setColumns(10);
+		Yb.setBounds(616, 308, 44, 20);
+		panel.add(Yb);
+		
+		hb = new JTextField();
+		hb.setColumns(10);
+		hb.setBounds(710, 308, 44, 20);
+		panel.add(hb);
+		
+		lblX_7 = new JLabel("X =");
+		lblX_7.setBounds(494, 311, 32, 14);
+		panel.add(lblX_7);
+		
+		lblY_7 = new JLabel("Y =");
+		lblY_7.setBounds(584, 311, 46, 14);
+		panel.add(lblY_7);
+		
+		lblH_7 = new JLabel("h =");
+		lblH_7.setBounds(684, 311, 46, 14);
+		panel.add(lblH_7);
+		
+		KB = new JTextField();
+		KB.setColumns(10);
+		KB.setBounds(152, 275, 24, 20);
+		panel.add(KB);
+		
+		NB = new JTextField();
+		NB.setColumns(10);
+		NB.setBounds(277, 275, 24, 20);
+		panel.add(NB);
+		
+		label_70 = new JLabel("\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C");
+		label_70.setBounds(35, 311, 62, 14);
+		panel.add(label_70);
+		
+		label_71 = new JLabel("\u0430\u0434\u043D \u0432 \u0433\u0440\u0443\u043F\u0456");
+		label_71.setBounds(33, 327, 64, 14);
+		panel.add(label_71);
+		
+		label_72 = new JLabel("\u041F\u043E\u0440\u044F\u0434\u043A\u043E\u0432\u0438\u0439 \u043D\u043E\u043C\u0435\u0440");
+		label_72.setBounds(113, 311, 122, 14);
+		panel.add(label_72);
+		
+		label_73 = new JLabel("\u0430\u0434\u043D \u0432 \u0433\u0440\u0443\u043F\u0456");
+		label_73.setBounds(132, 327, 63, 14);
+		panel.add(label_73);
+		
+		label_74 = new JLabel("\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C");
+		label_74.setBounds(266, 311, 65, 14);
+		panel.add(label_74);
+		
+		label_75 = new JLabel("\u0433\u0430\u0440\u043C\u0430\u0442 \u0432 \u0431\u0430\u0442\u0430\u0440\u0435\u0457");
+		label_75.setBounds(245, 327, 102, 14);
+		panel.add(label_75);
+		
+		lblNewLabel_1 = new JLabel("\u041D\u043E\u043C\u0435\u0440 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0457");
+		lblNewLabel_1.setBounds(368, 311, 92, 14);
+		panel.add(lblNewLabel_1);
+		
+		label_76 = new JLabel("\u0433\u0430\u0440\u043C\u0430\u0442\u0438");
+		label_76.setBounds(390, 327, 46, 14);
+		panel.add(label_76);
+		
+		KA = new JTextField();
+		KA.setColumns(10);
+		KA.setBounds(55, 347, 24, 20);
+		panel.add(KA);
+		
+		NA = new JTextField();
+		NA.setColumns(10);
+		NA.setBounds(152, 347, 24, 20);
+		panel.add(NA);
+		
+		KG = new JTextField();
+		KG.setColumns(10);
+		KG.setBounds(277, 347, 24, 20);
+		panel.add(KG);
+		
+		No = new JTextField();
+		No.setColumns(10);
+		No.setBounds(400, 347, 24, 20);
+		panel.add(No);
 		
 		JPanel panel_meteo = new JPanel();
 		tabbedPane.addTab("ÃÂÚÂÓ", null, panel_meteo, null);
@@ -1119,5 +1605,22 @@ public class Main extends JFrame {
 		JPanel panel_4 = new JPanel();
 		tabbedPane.addTab("“ŒœŒ Á‡‰‡˜i", null, panel_4, null);
 
+	}
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
 	}
 }
