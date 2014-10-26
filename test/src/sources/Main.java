@@ -1,36 +1,61 @@
-package test;
+package sources;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+
 import java.awt.FlowLayout;
+
 import javax.swing.BoxLayout;
+
 import java.awt.GridLayout;
+
+import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.ListSelectionModel;
+
 import java.awt.Font;
 import java.awt.Component;
+
 import javax.swing.Box;
+
 import java.awt.Color;
+
 import javax.swing.border.TitledBorder;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.Image;
 import java.awt.Insets;
+import java.awt.Toolkit;
+
 import javax.swing.SwingConstants;
 import javax.swing.JPopupMenu;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+
 import javax.swing.JCheckBoxMenuItem;
+
 import java.awt.Choice;
 import java.awt.List;
+import java.io.File;
+import java.io.IOException;
+
+import javax.swing.border.LineBorder;
+import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 //dfdsfdsfds
 public class Main extends JFrame {
 	private JPanel contentPane;
@@ -199,6 +224,25 @@ public class Main extends JFrame {
 	private JTextField NA;
 	private JTextField KG;
 	private JTextField No;
+	private JTabbedPane tabbedPane_TOPO;
+	private JPanel panel_PGZ;
+	private JPanel panel_OGZ;
+	private JPanel panel_REVERSE;
+	private JPanel panel_MERED;
+	private JPanel panel_ZONE;
+	private JPanel panel_CONVCOORD;
+	private JPanel panel_SUNANGLE;
+	private JTextField topo_pgz_Xa;
+	private JTextField topo_pgz_Ya;
+	private JPanel panel_imagePGZ;
+	private JTextField topo_pgz_hA;
+	private JTextField topo_pgz_alphaA;
+	private JTextField topo_pgz_D;
+	private JTextField topo_pgz_mA;
+	private JTextField topo_pgz_Xb;
+	private JTextField topo_pgz_Yb;
+	private JTextField topo_pgz_hB;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -843,7 +887,7 @@ public class Main extends JFrame {
 		panel_meteoNablyzh.add(textField_37);
 		
 		JButton button = new JButton("\u0421\u043A\u043B\u0430\u0441\u0442\u0438 \u0431\u044E\u043B\u0435\u0442\u0435\u043D\u044C");
-		button.setBackground(new Color(184, 134, 11));
+		button.setBackground(new Color(0, 0, 205));
 		button.setForeground(new Color(255, 255, 255));
 		button.setBounds(125, 323, 151, 39);
 		panel_meteoNablyzh.add(button);
@@ -1602,8 +1646,239 @@ public class Main extends JFrame {
 		JPanel panel_3 = new JPanel();
 		tabbedPane.addTab("Пристрiлка", null, panel_3, null);
 		
-		JPanel panel_4 = new JPanel();
-		tabbedPane.addTab("ТОПО задачi", null, panel_4, null);
-
+		JPanel panel_TOPO = new JPanel();
+		tabbedPane.addTab("ТОПО задачi", null, panel_TOPO, null);
+		panel_TOPO.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		tabbedPane_TOPO = new JTabbedPane(JTabbedPane.LEFT);
+		panel_TOPO.add(tabbedPane_TOPO);
+		
+		Image myPicture = null;
+		myPicture = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/pgz.png"));
+		
+		panel_PGZ = new JPanel();
+		tabbedPane_TOPO.addTab("Пряма геодезична задача", null, panel_PGZ, null);
+		panel_PGZ.setLayout(null);
+		
+		final JPopupMenu topo_pgz_popupMenu = new JPopupMenu();
+		topo_pgz_popupMenu.setSize(39, 25);
+		topo_pgz_popupMenu.setLocation(0, 0);
+		addPopup(panel_PGZ, topo_pgz_popupMenu);
+		
+		JButton pgz_pop_Button1 = new JButton("\u041A\u0421\u041F \u0413\u0420\u0423\u041F\u0418");
+		buttonGroup.add(pgz_pop_Button1);
+		topo_pgz_popupMenu.add(pgz_pop_Button1);
+		
+		JButton pgz_pop_Button2 = new JButton("\u041A\u0421\u041F \u0414\u0418\u0412I\u0417I\u041E\u041D\u0423");
+		buttonGroup.add(pgz_pop_Button2);
+		topo_pgz_popupMenu.add(pgz_pop_Button2);
+		
+		JButton pgz_pop_Button3 = new JButton("\u041A\u0421\u041F \u0411\u0410\u0422\u0410\u0420\u0415I");
+		buttonGroup.add(pgz_pop_Button3);
+		topo_pgz_popupMenu.add(pgz_pop_Button3);
+		
+		JButton pgz_pop_Button4 = new JButton("\u0411\u0421\u041F");
+		buttonGroup.add(pgz_pop_Button4);
+		topo_pgz_popupMenu.add(pgz_pop_Button4);
+		
+		JButton pgz_pop_Button5 = new JButton("\u041F\u0421\u041F");
+		buttonGroup.add(pgz_pop_Button5);
+		topo_pgz_popupMenu.add(pgz_pop_Button5);
+		
+		JButton pgz_pop_Button6 = new JButton("\u0421\u041D\u0410\u0420");
+		buttonGroup.add(pgz_pop_Button6);
+		topo_pgz_popupMenu.add(pgz_pop_Button6);
+		
+		JButton pgz_pop_Button7 = new JButton("\u0412\u041E\u0413\u041D\u0415\u0412\u0410 \u041F\u041E\u0417\u0418\u0426I\u042F");
+		buttonGroup.add(pgz_pop_Button7);
+		topo_pgz_popupMenu.add(pgz_pop_Button7);
+		
+		JLabel topo_pgz_labelCaption = new JLabel("\u041F\u0440\u044F\u043C\u0430 \u0433\u0435\u043E\u0434\u0435\u0437\u0438\u0447\u043D\u0430 \u0437\u0430\u0434\u0430\u0447\u0430");
+		topo_pgz_labelCaption.setForeground(Color.BLUE);
+		topo_pgz_labelCaption.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		topo_pgz_labelCaption.setBounds(10, 11, 300, 14);
+		panel_PGZ.add(topo_pgz_labelCaption);
+		
+		JLabel topo_pgz_lbl3 = new JLabel("\u0412\u0445i\u0434\u043Di \u0434\u0430\u043Di:");
+		topo_pgz_lbl3.setForeground(new Color(128, 0, 0));
+		topo_pgz_lbl3.setFont(new Font("Tahoma", Font.BOLD, 14));
+		topo_pgz_lbl3.setBounds(444, 28, 95, 14);
+		panel_PGZ.add(topo_pgz_lbl3);
+		
+		JLabel label_topo_pgz_Xa = new JLabel("Xa=");
+		label_topo_pgz_Xa.setBounds(339, 101, 28, 14);
+		panel_PGZ.add(label_topo_pgz_Xa);
+		
+		topo_pgz_Xa = new JTextField();
+		topo_pgz_Xa.setText("0");
+		topo_pgz_Xa.setColumns(10);
+		topo_pgz_Xa.setBounds(369, 98, 39, 20);
+		panel_PGZ.add(topo_pgz_Xa);
+		
+		JLabel label_topo_pgz_Ya = new JLabel("Ya=");
+		label_topo_pgz_Ya.setBounds(426, 101, 28, 14);
+		panel_PGZ.add(label_topo_pgz_Ya);
+		
+		topo_pgz_Ya = new JTextField();
+		topo_pgz_Ya.setText("0");
+		topo_pgz_Ya.setColumns(10);
+		topo_pgz_Ya.setBounds(453, 98, 39, 20);
+		panel_PGZ.add(topo_pgz_Ya);
+		
+		JButton topo_pgz_buttonCalc = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		topo_pgz_buttonCalc.setForeground(Color.WHITE);
+		topo_pgz_buttonCalc.setBackground(new Color(0, 0, 205));
+		topo_pgz_buttonCalc.setBounds(426, 225, 151, 39);
+		panel_PGZ.add(topo_pgz_buttonCalc);
+		
+		JLabel topo_pgz_lbl4 = new JLabel("\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:");
+		topo_pgz_lbl4.setForeground(new Color(128, 0, 0));
+		topo_pgz_lbl4.setFont(new Font("Tahoma", Font.BOLD, 14));
+		topo_pgz_lbl4.setBounds(444, 293, 95, 14);
+		panel_PGZ.add(topo_pgz_lbl4);
+		
+		panel_imagePGZ = new JPanel();
+		panel_imagePGZ.setBorder(new LineBorder(Color.GRAY, 2));
+		panel_imagePGZ.setBounds(10, 54, 300, 321);
+		panel_PGZ.add(panel_imagePGZ);
+		panel_imagePGZ.setLayout(new GridLayout(0, 1, 0, 0));
+		JLabel lblPgzimage = new JLabel(new ImageIcon(myPicture));
+		panel_imagePGZ.add(lblPgzimage);
+		lblPgzimage.setText("");
+		lblPgzimage.setBackground(Color.WHITE);
+		
+		JLabel lblHa = new JLabel("hA=");
+		lblHa.setBounds(513, 101, 28, 14);
+		panel_PGZ.add(lblHa);
+		
+		topo_pgz_hA = new JTextField();
+		topo_pgz_hA.setText("0");
+		topo_pgz_hA.setColumns(10);
+		topo_pgz_hA.setBounds(542, 98, 39, 20);
+		panel_PGZ.add(topo_pgz_hA);
+		
+		JLabel topo_pgz_lbl1 = new JLabel("\u041A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u0438 \u0442\u043E\u0447\u043A\u0438 \u0410:");
+		topo_pgz_lbl1.setForeground(Color.BLUE);
+		topo_pgz_lbl1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		topo_pgz_lbl1.setBounds(339, 73, 300, 14);
+		panel_PGZ.add(topo_pgz_lbl1);
+		
+		JLabel topo_pgz_lbl2 = new JLabel("\u041F\u043E\u043B\u044F\u0440\u043Di \u043A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u0438 \u0442\u043E\u0447\u043A\u0438 B:");
+		topo_pgz_lbl2.setForeground(Color.BLUE);
+		topo_pgz_lbl2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		topo_pgz_lbl2.setBounds(339, 147, 300, 14);
+		panel_PGZ.add(topo_pgz_lbl2);
+		
+		JLabel label_topo_pgz_alphaA = new JLabel("alpha A=");
+		label_topo_pgz_alphaA.setBounds(339, 175, 69, 14);
+		panel_PGZ.add(label_topo_pgz_alphaA);
+		
+		topo_pgz_alphaA = new JTextField();
+		topo_pgz_alphaA.setText("0");
+		topo_pgz_alphaA.setColumns(10);
+		topo_pgz_alphaA.setBounds(397, 172, 39, 20);
+		panel_PGZ.add(topo_pgz_alphaA);
+		
+		topo_pgz_D = new JTextField();
+		topo_pgz_D.setText("0");
+		topo_pgz_D.setColumns(10);
+		topo_pgz_D.setBounds(478, 172, 39, 20);
+		panel_PGZ.add(topo_pgz_D);
+		
+		JLabel label_topo_pgz_D = new JLabel("\u0414=");
+		label_topo_pgz_D.setBounds(453, 175, 28, 14);
+		panel_PGZ.add(label_topo_pgz_D);
+		
+		JLabel lblMa = new JLabel("mA=");
+		lblMa.setBounds(527, 175, 39, 14);
+		panel_PGZ.add(lblMa);
+		
+		topo_pgz_mA = new JTextField();
+		topo_pgz_mA.setText("0");
+		topo_pgz_mA.setColumns(10);
+		topo_pgz_mA.setBounds(557, 172, 39, 20);
+		panel_PGZ.add(topo_pgz_mA);
+		
+		JLabel topo_pgz_lbl5 = new JLabel("\u041A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u0438 \u0442\u043E\u0447\u043A\u0438 B:");
+		topo_pgz_lbl5.setForeground(Color.BLUE);
+		topo_pgz_lbl5.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		topo_pgz_lbl5.setBounds(339, 330, 300, 14);
+		panel_PGZ.add(topo_pgz_lbl5);
+		
+		JLabel lblXb = new JLabel("Xb=");
+		lblXb.setBounds(339, 358, 28, 14);
+		panel_PGZ.add(lblXb);
+		
+		topo_pgz_Xb = new JTextField();
+		topo_pgz_Xb.setText("0");
+		topo_pgz_Xb.setColumns(10);
+		topo_pgz_Xb.setBounds(369, 355, 39, 20);
+		panel_PGZ.add(topo_pgz_Xb);
+		
+		JLabel lblYb = new JLabel("Yb=");
+		lblYb.setBounds(426, 358, 28, 14);
+		panel_PGZ.add(lblYb);
+		
+		topo_pgz_Yb = new JTextField();
+		topo_pgz_Yb.setText("0");
+		topo_pgz_Yb.setColumns(10);
+		topo_pgz_Yb.setBounds(453, 355, 39, 20);
+		panel_PGZ.add(topo_pgz_Yb);
+		
+		JLabel lblHb = new JLabel("hB=");
+		lblHb.setBounds(513, 358, 28, 14);
+		panel_PGZ.add(lblHb);
+		
+		topo_pgz_hB = new JTextField();
+		topo_pgz_hB.setText("0");
+		topo_pgz_hB.setColumns(10);
+		topo_pgz_hB.setBounds(542, 355, 39, 20);
+		panel_PGZ.add(topo_pgz_hB);
+		
+		final JButton topo_pgz_buttonSave = new JButton("\u0417\u0431\u0435\u0440\u0435\u0433\u0442\u0438 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442");
+		topo_pgz_buttonSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				topo_pgz_popupMenu.show(panel_PGZ, topo_pgz_buttonSave.getX(), topo_pgz_buttonSave.getY()+40);
+			}
+		});
+		topo_pgz_buttonSave.setForeground(Color.WHITE);
+		topo_pgz_buttonSave.setBackground(new Color(0, 0, 205));
+		topo_pgz_buttonSave.setBounds(426, 408, 151, 39);
+		panel_PGZ.add(topo_pgz_buttonSave);
+		
+		panel_OGZ = new JPanel();
+		tabbedPane_TOPO.addTab("Обернена геодезична задача", null, panel_OGZ, null);
+		
+		panel_REVERSE = new JPanel();
+		tabbedPane_TOPO.addTab("Оберненi засiчки", null, panel_REVERSE, null);
+		
+		panel_MERED = new JPanel();
+		tabbedPane_TOPO.addTab("Визначення зближення мередiанiв", null, panel_MERED, null);
+		
+		panel_ZONE = new JPanel();
+		tabbedPane_TOPO.addTab("Перетворення координат в iншу зону", null, panel_ZONE, null);
+		
+		panel_CONVCOORD = new JPanel();
+		tabbedPane_TOPO.addTab("Перетвор. прямокут. коорд. в геодезичнi та навпаки", null, panel_CONVCOORD, null);
+		
+		panel_SUNANGLE = new JPanel();
+		tabbedPane_TOPO.addTab("Визначення дирекцiйного кута сонця", null, panel_SUNANGLE, null);
+	}
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
 	}
 }
