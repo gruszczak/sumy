@@ -1,63 +1,40 @@
 package sources;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.imageio.ImageIO;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-
-import java.awt.FlowLayout;
-
-import javax.swing.BoxLayout;
-
-import java.awt.GridLayout;
-
-import javax.swing.ImageIcon;
-import javax.swing.JTabbedPane;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.ListSelectionModel;
-
-import java.awt.Font;
-import java.awt.Component;
-
-import javax.swing.Box;
-
 import java.awt.Color;
-
-import javax.swing.border.TitledBorder;
-
-import java.awt.GridBagLayout;
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.Toolkit;
-
-import javax.swing.SwingConstants;
-import javax.swing.JPopupMenu;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
 
-import javax.swing.JCheckBoxMenuItem;
-
-import java.awt.Choice;
-import java.awt.List;
-import java.io.File;
-import java.io.IOException;
-
-import javax.swing.border.LineBorder;
 import javax.swing.ButtonGroup;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
+
 //dfdsfdsfds
 public class Main extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField_meteoGP_1;
 	private JTextField textField_meteoGP_2;
@@ -243,6 +220,7 @@ public class Main extends JFrame {
 	private JTextField topo_pgz_Yb;
 	private JTextField topo_pgz_hB;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private CalculateClass cs;
 
 	/**
 	 * Launch the application.
@@ -1726,6 +1704,26 @@ public class Main extends JFrame {
 		panel_PGZ.add(topo_pgz_Ya);
 		
 		JButton topo_pgz_buttonCalc = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		topo_pgz_buttonCalc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cs = new CalculateClass();
+				int xA, yA, hA, xB, yB, hB;
+				double alpha, dovorot, mestoCeli;
+				xA =Integer.valueOf(topo_pgz_Xa.getText());
+				yA =Integer.valueOf(topo_pgz_Ya.getText());
+				hA =Integer.valueOf(topo_pgz_hA.getText());
+				alpha = Double.valueOf(topo_pgz_alphaA.getText());
+				dovorot = Double.valueOf(topo_pgz_D.getText());
+				mestoCeli = Double.valueOf(topo_pgz_mA.getText());
+				cs.calculatePGZ(xA, yA, hA, alpha, dovorot, mestoCeli);
+				xB = (int) cs.get_xB();
+				yB = (int) cs.get_yB();
+				hB = (int) cs.get_hB();
+				topo_pgz_Xb.setText(String.valueOf(xB));
+				topo_pgz_Yb.setText(String.valueOf(yB));
+				topo_pgz_hB.setText(String.valueOf(hB));
+			}
+		});
 		topo_pgz_buttonCalc.setForeground(Color.WHITE);
 		topo_pgz_buttonCalc.setBackground(new Color(0, 0, 205));
 		topo_pgz_buttonCalc.setBounds(426, 225, 151, 39);
@@ -1864,6 +1862,7 @@ public class Main extends JFrame {
 		panel_SUNANGLE = new JPanel();
 		tabbedPane_TOPO.addTab("Визначення дирекцiйного кута сонця", null, panel_SUNANGLE, null);
 	}
+
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
@@ -1871,11 +1870,13 @@ public class Main extends JFrame {
 					showMenu(e);
 				}
 			}
+
 			public void mouseReleased(MouseEvent e) {
 				if (e.isPopupTrigger()) {
 					showMenu(e);
 				}
 			}
+
 			private void showMenu(MouseEvent e) {
 				popup.show(e.getComponent(), e.getX(), e.getY());
 			}
