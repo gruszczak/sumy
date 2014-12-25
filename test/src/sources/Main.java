@@ -29,6 +29,18 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.UIManager;
+import javax.swing.Icon;
+import javax.swing.JRadioButton;
+import javax.swing.BoxLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 //dfdsfdsfds
 public class Main extends JFrame {
@@ -306,6 +318,59 @@ public class Main extends JFrame {
 	private JLabel lblii_2;
 	private JPanel panel_imageREVERSE;
 	private JLabel label_110;
+	private JPanel panel_calculatedDegrees;
+	private JLabel label_111;
+	private JPanel panel_15;
+	private JLabel label_112;
+	private JPanel topo_reverse_orient_point_1;
+	private JLabel lblX_9;
+	private JTextField topo_reverse_orient_X1;
+	private JLabel lblY_9;
+	private JTextField topo_reverse_orient_Y1;
+	private JLabel lblH_8;
+	private JTextField topo_reverse_orient_h1;
+	private JTextField topo_reverse_orient_degree1_1;
+	private JTextField topo_reverse_orient_degree1_2;
+	private JTextField topo_reverse_orient_X2;
+	private JTextField topo_reverse_orient_Y2;
+	private JTextField topo_reverse_orient_h2;
+	private JTextField topo_reverse_orient_degree2_1;
+	private JTextField topo_reverse_orient_degree2_2;
+	private JTextField topo_reverse_orient_X3;
+	private JTextField topo_reverse_orient_Y3;
+	private JTextField topo_reverse_orient_h3;
+	private JTextField topo_reverse_orient_degree3_1;
+	private JTextField topo_reverse_orient_degree3_2;
+	private JTextField topo_reverse_orient_degreeMesta_1;
+	private JTextField topo_reverse_orient_degreeMesta_2;
+	private JPanel topo_reverse_calculated_point_1;
+	private JLabel label_122;
+	private JTextField topo_reverse_calculated_X1;
+	private JLabel label_123;
+	private JTextField topo_reverse_calculated_Y1;
+	private JLabel label_124;
+	private JTextField topo_reverse_calculated_h1;
+	private JLabel lbli_9;
+	private JTextField topo_reverse_calculated_degreeMesta_1;
+	private JTextField topo_reverse_calculated_degreeMesta_2;
+	private JPanel topo_reverse_calculated_point_2;
+	private JLabel label_125;
+	private JTextField topo_reverse_calculated_X2;
+	private JLabel label_126;
+	private JTextField topo_reverse_calculated_Y2;
+	private JPanel topo_reverse_calculated_point_3;
+	private JLabel label_127;
+	private JTextField topo_reverse_calculated_X3;
+	private JLabel label_128;
+	private JTextField topo_reverse_calculated_Y3;
+	private JButton button_5;
+	private JPanel panel_13;
+	private JLabel label_129;
+	private JLabel label_130;
+	private JTextField topo_reverse_calculated_degreeHorizontal1_1;
+	private JTextField topo_reverse_calculated_degreeHorizontal1_2;
+	private JTextField topo_reverse_calculated_degreeHorizontal2_1;
+	private JTextField topo_reverse_calculated_degreeHorizontal2_2;
 
 	/**
 	 * Launch the application.
@@ -2108,24 +2173,666 @@ public class Main extends JFrame {
 		
 		panel_REVERSE = new JPanel();
 		tabbedPane_TOPO.addTab("Оберненi засiчки", null, panel_REVERSE, null);
-		panel_REVERSE.setLayout(null);
+		panel_REVERSE.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		lblii_2 = new JLabel("\u041E\u0431\u0435\u0440\u043D\u0435\u043Di \u0437\u0430\u0441i\u0447\u043A\u0438");
+		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
+		panel_REVERSE.add(tabbedPane_2);
+		
+		JPanel panel_orient = new JPanel();
+		tabbedPane_2.addTab("Обернена засічка орієнтованим приладом", null, panel_orient, null);
+		panel_orient.setLayout(null);
+		
+		lblii_2 = new JLabel("\u041E\u0431\u0435\u0440\u043D\u0435\u043D\u0430 \u0437\u0430\u0441\u0456\u0447\u043A\u0430 \u043E\u0440\u0456\u0454\u043D\u0442\u043E\u0432\u0430\u043D\u0438\u043C \u043F\u0440\u0438\u043B\u0430\u0434\u043E\u043C");
+		lblii_2.setBounds(10, 11, 300, 14);
+		panel_orient.add(lblii_2);
 		lblii_2.setForeground(Color.BLUE);
 		lblii_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblii_2.setBounds(10, 11, 188, 14);
-		panel_REVERSE.add(lblii_2);
 		
 		panel_imageREVERSE = new JPanel();
+		panel_imageREVERSE.setBounds(10, 36, 300, 321);
+		panel_orient.add(panel_imageREVERSE);
 		panel_imageREVERSE.setBorder(new LineBorder(Color.GRAY, 2));
-		panel_imageREVERSE.setBounds(10, 49, 300, 321);
-		panel_REVERSE.add(panel_imageREVERSE);
 		panel_imageREVERSE.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		label_110 = new JLabel(new ImageIcon(myPicture1));
 		label_110.setText("");
 		label_110.setBackground(Color.WHITE);
 		panel_imageREVERSE.add(label_110);
+		
+		final JRadioButton rdbtnNewRadioButton = new JRadioButton("\u0420\u043E\u0437\u0440\u0430\u0445\u0443\u043D\u043E\u043A \u0432\u0435\u0441\u0442\u0438 \u043F\u043E 2 \u0442\u043E\u0447\u043A\u0430\u043C");
+		rdbtnNewRadioButton.setSelected(true);
+		rdbtnNewRadioButton.setBounds(332, 60, 261, 23);
+		panel_orient.add(rdbtnNewRadioButton);
+		
+		final JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\u0420\u043E\u0437\u0440\u0430\u0445\u0443\u043D\u043E\u043A \u0432\u0435\u0441\u0442\u0438 \u043F\u043E 3 \u0442\u043E\u0447\u043A\u0430\u043C");
+
+		rdbtnNewRadioButton_1.setBounds(332, 86, 261, 23);
+		panel_orient.add(rdbtnNewRadioButton_1);
+		
+		ButtonGroup bG = new ButtonGroup();
+		bG.add(rdbtnNewRadioButton);
+		bG.add(rdbtnNewRadioButton_1);
+		
+		topo_reverse_orient_point_1 = new JPanel();
+		topo_reverse_orient_point_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u041F\u0435\u0440\u0448\u0430 \u0442\u043E\u0447\u043A\u0430", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		topo_reverse_orient_point_1.setBounds(332, 126, 261, 231);
+		panel_orient.add(topo_reverse_orient_point_1);
+		GridBagLayout gbl_topo_reverse_orient_point_1 = new GridBagLayout();
+		gbl_topo_reverse_orient_point_1.columnWidths = new int[] {50, 50, 50};
+		gbl_topo_reverse_orient_point_1.rowHeights = new int[] {30, 30, 30, 30, 30, 30, 30};
+		gbl_topo_reverse_orient_point_1.columnWeights = new double[]{0.0, 1.0, 1.0};
+		gbl_topo_reverse_orient_point_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		topo_reverse_orient_point_1.setLayout(gbl_topo_reverse_orient_point_1);
+		
+		lblX_9 = new JLabel("X");
+		GridBagConstraints gbc_lblX_9 = new GridBagConstraints();
+		gbc_lblX_9.anchor = GridBagConstraints.NORTH;
+		gbc_lblX_9.insets = new Insets(0, 0, 5, 5);
+		gbc_lblX_9.gridx = 0;
+		gbc_lblX_9.gridy = 1;
+		topo_reverse_orient_point_1.add(lblX_9, gbc_lblX_9);
+		
+		topo_reverse_orient_X1 = new JTextField();
+		topo_reverse_orient_X1.setText("000");
+		topo_reverse_orient_X1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_X1 = new GridBagConstraints();
+		gbc_topo_reverse_orient_X1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_X1.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_orient_X1.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_X1.gridx = 1;
+		gbc_topo_reverse_orient_X1.gridy = 1;
+		topo_reverse_orient_point_1.add(topo_reverse_orient_X1, gbc_topo_reverse_orient_X1);
+		
+		lblY_9 = new JLabel("Y");
+		GridBagConstraints gbc_lblY_9 = new GridBagConstraints();
+		gbc_lblY_9.anchor = GridBagConstraints.NORTH;
+		gbc_lblY_9.insets = new Insets(0, 0, 5, 5);
+		gbc_lblY_9.gridx = 0;
+		gbc_lblY_9.gridy = 2;
+		topo_reverse_orient_point_1.add(lblY_9, gbc_lblY_9);
+		
+		topo_reverse_orient_Y1 = new JTextField();
+		topo_reverse_orient_Y1.setText("000");
+		topo_reverse_orient_Y1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_Y1 = new GridBagConstraints();
+		gbc_topo_reverse_orient_Y1.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_Y1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_Y1.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_orient_Y1.gridx = 1;
+		gbc_topo_reverse_orient_Y1.gridy = 2;
+		topo_reverse_orient_point_1.add(topo_reverse_orient_Y1, gbc_topo_reverse_orient_Y1);
+		
+		lblH_8 = new JLabel("h");
+		GridBagConstraints gbc_lblH_8 = new GridBagConstraints();
+		gbc_lblH_8.insets = new Insets(0, 0, 5, 5);
+		gbc_lblH_8.gridx = 0;
+		gbc_lblH_8.gridy = 3;
+		topo_reverse_orient_point_1.add(lblH_8, gbc_lblH_8);
+		
+		topo_reverse_orient_h1 = new JTextField();
+		topo_reverse_orient_h1.setText("000");
+		topo_reverse_orient_h1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_h1 = new GridBagConstraints();
+		gbc_topo_reverse_orient_h1.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_h1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_h1.gridx = 1;
+		gbc_topo_reverse_orient_h1.gridy = 3;
+		topo_reverse_orient_point_1.add(topo_reverse_orient_h1, gbc_topo_reverse_orient_h1);
+		
+		JLabel label_113 = new JLabel("\u0414\u0438\u0440\u0435\u043A\u0446. \u043A\u0443\u0442");
+		GridBagConstraints gbc_label_113 = new GridBagConstraints();
+		gbc_label_113.anchor = GridBagConstraints.EAST;
+		gbc_label_113.insets = new Insets(0, 0, 5, 5);
+		gbc_label_113.gridx = 0;
+		gbc_label_113.gridy = 5;
+		topo_reverse_orient_point_1.add(label_113, gbc_label_113);
+		
+		topo_reverse_orient_degree1_1 = new JTextField();
+		topo_reverse_orient_degree1_1.setText("000");
+		topo_reverse_orient_degree1_1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_degree1_1 = new GridBagConstraints();
+		gbc_topo_reverse_orient_degree1_1.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_degree1_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_degree1_1.gridx = 1;
+		gbc_topo_reverse_orient_degree1_1.gridy = 5;
+		topo_reverse_orient_point_1.add(topo_reverse_orient_degree1_1, gbc_topo_reverse_orient_degree1_1);
+		
+		topo_reverse_orient_degree1_2 = new JTextField();
+		topo_reverse_orient_degree1_2.setText("000");
+		topo_reverse_orient_degree1_2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_degree1_2 = new GridBagConstraints();
+		gbc_topo_reverse_orient_degree1_2.insets = new Insets(0, 0, 5, 0);
+		gbc_topo_reverse_orient_degree1_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_degree1_2.gridx = 2;
+		gbc_topo_reverse_orient_degree1_2.gridy = 5;
+		topo_reverse_orient_point_1.add(topo_reverse_orient_degree1_2, gbc_topo_reverse_orient_degree1_2);
+		
+		JLabel lbli_8 = new JLabel("\u041A\u0443\u0442 \u043Ci\u0441\u0446\u044F");
+		GridBagConstraints gbc_lbli_8 = new GridBagConstraints();
+		gbc_lbli_8.insets = new Insets(0, 0, 0, 5);
+		gbc_lbli_8.gridx = 0;
+		gbc_lbli_8.gridy = 6;
+		topo_reverse_orient_point_1.add(lbli_8, gbc_lbli_8);
+		
+		topo_reverse_orient_degreeMesta_1 = new JTextField();
+		topo_reverse_orient_degreeMesta_1.setText("000");
+		topo_reverse_orient_degreeMesta_1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_degreeMesta_1 = new GridBagConstraints();
+		gbc_topo_reverse_orient_degreeMesta_1.insets = new Insets(0, 0, 0, 5);
+		gbc_topo_reverse_orient_degreeMesta_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_degreeMesta_1.gridx = 1;
+		gbc_topo_reverse_orient_degreeMesta_1.gridy = 6;
+		topo_reverse_orient_point_1.add(topo_reverse_orient_degreeMesta_1, gbc_topo_reverse_orient_degreeMesta_1);
+		
+		topo_reverse_orient_degreeMesta_2 = new JTextField();
+		topo_reverse_orient_degreeMesta_2.setText("000");
+		topo_reverse_orient_degreeMesta_2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_degreeMesta_2 = new GridBagConstraints();
+		gbc_topo_reverse_orient_degreeMesta_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_degreeMesta_2.gridx = 2;
+		gbc_topo_reverse_orient_degreeMesta_2.gridy = 6;
+		topo_reverse_orient_point_1.add(topo_reverse_orient_degreeMesta_2, gbc_topo_reverse_orient_degreeMesta_2);
+		
+		JPanel topo_reverse_orient_point_2 = new JPanel();
+		topo_reverse_orient_point_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0414\u0440\u0443\u0433\u0430 \u0442\u043E\u0447\u043A\u0430", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		topo_reverse_orient_point_2.setBounds(332, 368, 261, 202);
+		panel_orient.add(topo_reverse_orient_point_2);
+		GridBagLayout gbl_topo_reverse_orient_point_2 = new GridBagLayout();
+		gbl_topo_reverse_orient_point_2.columnWidths = new int[] {50, 50, 50};
+		gbl_topo_reverse_orient_point_2.rowHeights = new int[] {30, 30, 30, 30, 30, 30};
+		gbl_topo_reverse_orient_point_2.columnWeights = new double[]{0.0, 1.0, 1.0};
+		gbl_topo_reverse_orient_point_2.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+		topo_reverse_orient_point_2.setLayout(gbl_topo_reverse_orient_point_2);
+		
+		JLabel label_114 = new JLabel("X");
+		GridBagConstraints gbc_label_114 = new GridBagConstraints();
+		gbc_label_114.anchor = GridBagConstraints.NORTH;
+		gbc_label_114.insets = new Insets(0, 0, 5, 5);
+		gbc_label_114.gridx = 0;
+		gbc_label_114.gridy = 1;
+		topo_reverse_orient_point_2.add(label_114, gbc_label_114);
+		
+		topo_reverse_orient_X2 = new JTextField();
+		topo_reverse_orient_X2.setText("000");
+		topo_reverse_orient_X2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_X2 = new GridBagConstraints();
+		gbc_topo_reverse_orient_X2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_X2.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_orient_X2.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_X2.gridx = 1;
+		gbc_topo_reverse_orient_X2.gridy = 1;
+		topo_reverse_orient_point_2.add(topo_reverse_orient_X2, gbc_topo_reverse_orient_X2);
+		
+		JLabel label_115 = new JLabel("Y");
+		GridBagConstraints gbc_label_115 = new GridBagConstraints();
+		gbc_label_115.anchor = GridBagConstraints.NORTH;
+		gbc_label_115.insets = new Insets(0, 0, 5, 5);
+		gbc_label_115.gridx = 0;
+		gbc_label_115.gridy = 2;
+		topo_reverse_orient_point_2.add(label_115, gbc_label_115);
+		
+		topo_reverse_orient_Y2 = new JTextField();
+		topo_reverse_orient_Y2.setText("000");
+		topo_reverse_orient_Y2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_Y2 = new GridBagConstraints();
+		gbc_topo_reverse_orient_Y2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_Y2.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_orient_Y2.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_Y2.gridx = 1;
+		gbc_topo_reverse_orient_Y2.gridy = 2;
+		topo_reverse_orient_point_2.add(topo_reverse_orient_Y2, gbc_topo_reverse_orient_Y2);
+		
+		JLabel label_116 = new JLabel("h");
+		GridBagConstraints gbc_label_116 = new GridBagConstraints();
+		gbc_label_116.insets = new Insets(0, 0, 5, 5);
+		gbc_label_116.gridx = 0;
+		gbc_label_116.gridy = 3;
+		topo_reverse_orient_point_2.add(label_116, gbc_label_116);
+		
+		topo_reverse_orient_h2 = new JTextField();
+		topo_reverse_orient_h2.setText("000");
+		topo_reverse_orient_h2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_h2 = new GridBagConstraints();
+		gbc_topo_reverse_orient_h2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_h2.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_h2.gridx = 1;
+		gbc_topo_reverse_orient_h2.gridy = 3;
+		topo_reverse_orient_point_2.add(topo_reverse_orient_h2, gbc_topo_reverse_orient_h2);
+		
+		JLabel label_117 = new JLabel("\u0414\u0438\u0440\u0435\u043A\u0446. \u043A\u0443\u0442");
+		GridBagConstraints gbc_label_117 = new GridBagConstraints();
+		gbc_label_117.anchor = GridBagConstraints.EAST;
+		gbc_label_117.insets = new Insets(0, 0, 0, 5);
+		gbc_label_117.gridx = 0;
+		gbc_label_117.gridy = 5;
+		topo_reverse_orient_point_2.add(label_117, gbc_label_117);
+		
+		topo_reverse_orient_degree2_1 = new JTextField();
+		topo_reverse_orient_degree2_1.setText("000");
+		topo_reverse_orient_degree2_1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_degree2_1 = new GridBagConstraints();
+		gbc_topo_reverse_orient_degree2_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_degree2_1.insets = new Insets(0, 0, 0, 5);
+		gbc_topo_reverse_orient_degree2_1.gridx = 1;
+		gbc_topo_reverse_orient_degree2_1.gridy = 5;
+		topo_reverse_orient_point_2.add(topo_reverse_orient_degree2_1, gbc_topo_reverse_orient_degree2_1);
+		
+		topo_reverse_orient_degree2_2 = new JTextField();
+		topo_reverse_orient_degree2_2.setText("000");
+		topo_reverse_orient_degree2_2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_degree2_2 = new GridBagConstraints();
+		gbc_topo_reverse_orient_degree2_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_degree2_2.gridx = 2;
+		gbc_topo_reverse_orient_degree2_2.gridy = 5;
+		topo_reverse_orient_point_2.add(topo_reverse_orient_degree2_2, gbc_topo_reverse_orient_degree2_2);
+		
+		final JPanel topo_reverse_orient_point_3 = new JPanel();
+		topo_reverse_orient_point_3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0422\u0440\u0435\u0442\u044F \u0442\u043E\u0447\u043A\u0430", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		topo_reverse_orient_point_3.setBounds(31, 368, 261, 202);
+		panel_orient.add(topo_reverse_orient_point_3);
+		GridBagLayout gbl_topo_reverse_orient_point_3 = new GridBagLayout();
+		gbl_topo_reverse_orient_point_3.columnWidths = new int[] {50, 50, 50};
+		gbl_topo_reverse_orient_point_3.rowHeights = new int[] {30, 30, 30, 30, 30, 30};
+		gbl_topo_reverse_orient_point_3.columnWeights = new double[]{0.0, 1.0, 1.0};
+		gbl_topo_reverse_orient_point_3.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+		topo_reverse_orient_point_3.setLayout(gbl_topo_reverse_orient_point_3);
+		topo_reverse_orient_point_3.setEnabled(false);
+		
+		rdbtnNewRadioButton_1.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				if (rdbtnNewRadioButton_1.isSelected() == false){
+					topo_reverse_orient_point_3.setEnabled(false);
+					topo_reverse_orient_X3.setEnabled(false);
+					topo_reverse_orient_Y3.setEnabled(false);
+					topo_reverse_orient_h3.setEnabled(false);
+					topo_reverse_orient_degree3_1.setEnabled(false);
+					topo_reverse_orient_degree3_2.setEnabled(false);
+				}
+				else {
+					topo_reverse_orient_point_3.setEnabled(true);
+					topo_reverse_orient_X3.setEnabled(true);
+					topo_reverse_orient_Y3.setEnabled(true);
+					topo_reverse_orient_h3.setEnabled(true);
+					topo_reverse_orient_degree3_1.setEnabled(true);
+					topo_reverse_orient_degree3_2.setEnabled(true);
+				}
+			}
+		});
+		
+		JLabel label_118 = new JLabel("X");
+		GridBagConstraints gbc_label_118 = new GridBagConstraints();
+		gbc_label_118.anchor = GridBagConstraints.NORTH;
+		gbc_label_118.insets = new Insets(0, 0, 5, 5);
+		gbc_label_118.gridx = 0;
+		gbc_label_118.gridy = 1;
+		topo_reverse_orient_point_3.add(label_118, gbc_label_118);
+		
+		topo_reverse_orient_X3 = new JTextField();
+		topo_reverse_orient_X3.setText("000");
+		topo_reverse_orient_X3.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_X3 = new GridBagConstraints();
+		gbc_topo_reverse_orient_X3.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_X3.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_orient_X3.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_X3.gridx = 1;
+		gbc_topo_reverse_orient_X3.gridy = 1;
+		topo_reverse_orient_point_3.add(topo_reverse_orient_X3, gbc_topo_reverse_orient_X3);
+		
+		JLabel label_119 = new JLabel("Y");
+		GridBagConstraints gbc_label_119 = new GridBagConstraints();
+		gbc_label_119.anchor = GridBagConstraints.NORTH;
+		gbc_label_119.insets = new Insets(0, 0, 5, 5);
+		gbc_label_119.gridx = 0;
+		gbc_label_119.gridy = 2;
+		topo_reverse_orient_point_3.add(label_119, gbc_label_119);
+		
+		topo_reverse_orient_Y3 = new JTextField();
+		topo_reverse_orient_Y3.setText("000");
+		topo_reverse_orient_Y3.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_Y3 = new GridBagConstraints();
+		gbc_topo_reverse_orient_Y3.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_Y3.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_orient_Y3.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_Y3.gridx = 1;
+		gbc_topo_reverse_orient_Y3.gridy = 2;
+		topo_reverse_orient_point_3.add(topo_reverse_orient_Y3, gbc_topo_reverse_orient_Y3);
+		
+		JLabel label_120 = new JLabel("h");
+		GridBagConstraints gbc_label_120 = new GridBagConstraints();
+		gbc_label_120.insets = new Insets(0, 0, 5, 5);
+		gbc_label_120.gridx = 0;
+		gbc_label_120.gridy = 3;
+		topo_reverse_orient_point_3.add(label_120, gbc_label_120);
+		
+		topo_reverse_orient_h3 = new JTextField();
+		topo_reverse_orient_h3.setText("000");
+		topo_reverse_orient_h3.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_h3 = new GridBagConstraints();
+		gbc_topo_reverse_orient_h3.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_h3.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_orient_h3.gridx = 1;
+		gbc_topo_reverse_orient_h3.gridy = 3;
+		topo_reverse_orient_point_3.add(topo_reverse_orient_h3, gbc_topo_reverse_orient_h3);
+		
+		JLabel label_121 = new JLabel("\u0414\u0438\u0440\u0435\u043A\u0446. \u043A\u0443\u0442");
+		GridBagConstraints gbc_label_121 = new GridBagConstraints();
+		gbc_label_121.anchor = GridBagConstraints.EAST;
+		gbc_label_121.insets = new Insets(0, 0, 0, 5);
+		gbc_label_121.gridx = 0;
+		gbc_label_121.gridy = 5;
+		topo_reverse_orient_point_3.add(label_121, gbc_label_121);
+		
+		topo_reverse_orient_degree3_1 = new JTextField();
+		topo_reverse_orient_degree3_1.setText("000");
+		topo_reverse_orient_degree3_1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_degree3_1 = new GridBagConstraints();
+		gbc_topo_reverse_orient_degree3_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_degree3_1.insets = new Insets(0, 0, 0, 5);
+		gbc_topo_reverse_orient_degree3_1.gridx = 1;
+		gbc_topo_reverse_orient_degree3_1.gridy = 5;
+		topo_reverse_orient_point_3.add(topo_reverse_orient_degree3_1, gbc_topo_reverse_orient_degree3_1);
+		
+		topo_reverse_orient_degree3_2 = new JTextField();
+		topo_reverse_orient_degree3_2.setText("000");
+		topo_reverse_orient_degree3_2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_orient_degree3_2 = new GridBagConstraints();
+		gbc_topo_reverse_orient_degree3_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_orient_degree3_2.gridx = 2;
+		gbc_topo_reverse_orient_degree3_2.gridy = 5;
+		topo_reverse_orient_point_3.add(topo_reverse_orient_degree3_2, gbc_topo_reverse_orient_degree3_2);
+		
+		// Disable 3point form
+		// Orient
+		topo_reverse_orient_point_3.setEnabled(false);
+		topo_reverse_orient_X3.setEnabled(false);
+		topo_reverse_orient_Y3.setEnabled(false);
+		topo_reverse_orient_h3.setEnabled(false);
+		topo_reverse_orient_degree3_1.setEnabled(false);
+		topo_reverse_orient_degree3_2.setEnabled(false);
+		
+		JButton topo_reverse_orient_buttonCalc = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		topo_reverse_orient_buttonCalc.setForeground(Color.WHITE);
+		topo_reverse_orient_buttonCalc.setBackground(new Color(0, 0, 205));
+		topo_reverse_orient_buttonCalc.setBounds(479, 600, 114, 39);
+		panel_orient.add(topo_reverse_orient_buttonCalc);
+		
+		panel_calculatedDegrees = new JPanel();
+		panel_calculatedDegrees.setLayout(null);
+		tabbedPane_2.addTab("Обернена засічка за виміряними кутами", null, panel_calculatedDegrees, null);
+		
+		label_111 = new JLabel("\u041E\u0431\u0435\u0440\u043D\u0435\u043D\u0430 \u0437\u0430\u0441\u0456\u0447\u043A\u0430 \u0437\u0430 \u0432\u0438\u043C\u0456\u0440\u044F\u043D\u0438\u043C\u0438 \u043A\u0443\u0442\u0430\u043C\u0438");
+		label_111.setForeground(Color.BLUE);
+		label_111.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		label_111.setBounds(10, 11, 300, 14);
+		panel_calculatedDegrees.add(label_111);
+		
+		panel_15 = new JPanel();
+		panel_15.setBorder(new LineBorder(Color.GRAY, 2));
+		panel_15.setBounds(10, 36, 300, 321);
+		panel_calculatedDegrees.add(panel_15);
+		panel_15.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		label_112 = new JLabel(new ImageIcon(myPicture1));
+		label_112.setText("");
+		label_112.setBackground(Color.WHITE);
+		panel_15.add(label_112);
+		
+		ButtonGroup bG2 = new ButtonGroup();
+		
+		topo_reverse_calculated_point_1 = new JPanel();
+		topo_reverse_calculated_point_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u041F\u0435\u0440\u0448\u0430 \u0442\u043E\u0447\u043A\u0430", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		topo_reverse_calculated_point_1.setBounds(330, 49, 261, 231);
+		panel_calculatedDegrees.add(topo_reverse_calculated_point_1);
+		GridBagLayout gbl_topo_reverse_calculated_point_1 = new GridBagLayout();
+		gbl_topo_reverse_calculated_point_1.columnWidths = new int[] {80, 50, 50};
+		gbl_topo_reverse_calculated_point_1.rowHeights = new int[] {30, 30, 30, 30, 30, 30};
+		gbl_topo_reverse_calculated_point_1.columnWeights = new double[]{0.0, 1.0, 1.0};
+		gbl_topo_reverse_calculated_point_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+		topo_reverse_calculated_point_1.setLayout(gbl_topo_reverse_calculated_point_1);
+		
+		label_122 = new JLabel("X");
+		GridBagConstraints gbc_label_122 = new GridBagConstraints();
+		gbc_label_122.anchor = GridBagConstraints.NORTH;
+		gbc_label_122.insets = new Insets(0, 0, 5, 5);
+		gbc_label_122.gridx = 0;
+		gbc_label_122.gridy = 1;
+		topo_reverse_calculated_point_1.add(label_122, gbc_label_122);
+		
+		topo_reverse_calculated_X1 = new JTextField();
+		topo_reverse_calculated_X1.setText("000");
+		topo_reverse_calculated_X1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_X1 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_X1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_X1.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_calculated_X1.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_calculated_X1.gridx = 1;
+		gbc_topo_reverse_calculated_X1.gridy = 1;
+		topo_reverse_calculated_point_1.add(topo_reverse_calculated_X1, gbc_topo_reverse_calculated_X1);
+		
+		label_123 = new JLabel("Y");
+		GridBagConstraints gbc_label_123 = new GridBagConstraints();
+		gbc_label_123.anchor = GridBagConstraints.NORTH;
+		gbc_label_123.insets = new Insets(0, 0, 5, 5);
+		gbc_label_123.gridx = 0;
+		gbc_label_123.gridy = 2;
+		topo_reverse_calculated_point_1.add(label_123, gbc_label_123);
+		
+		topo_reverse_calculated_Y1 = new JTextField();
+		topo_reverse_calculated_Y1.setText("000");
+		topo_reverse_calculated_Y1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_Y1 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_Y1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_Y1.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_calculated_Y1.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_calculated_Y1.gridx = 1;
+		gbc_topo_reverse_calculated_Y1.gridy = 2;
+		topo_reverse_calculated_point_1.add(topo_reverse_calculated_Y1, gbc_topo_reverse_calculated_Y1);
+		
+		label_124 = new JLabel("h");
+		GridBagConstraints gbc_label_124 = new GridBagConstraints();
+		gbc_label_124.insets = new Insets(0, 0, 5, 5);
+		gbc_label_124.gridx = 0;
+		gbc_label_124.gridy = 3;
+		topo_reverse_calculated_point_1.add(label_124, gbc_label_124);
+		
+		topo_reverse_calculated_h1 = new JTextField();
+		topo_reverse_calculated_h1.setText("000");
+		topo_reverse_calculated_h1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_h1 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_h1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_h1.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_calculated_h1.gridx = 1;
+		gbc_topo_reverse_calculated_h1.gridy = 3;
+		topo_reverse_calculated_point_1.add(topo_reverse_calculated_h1, gbc_topo_reverse_calculated_h1);
+		
+		lbli_9 = new JLabel("\u041A\u0443\u0442 \u043Ci\u0441\u0446\u044F");
+		GridBagConstraints gbc_lbli_9 = new GridBagConstraints();
+		gbc_lbli_9.insets = new Insets(0, 0, 5, 5);
+		gbc_lbli_9.gridx = 0;
+		gbc_lbli_9.gridy = 5;
+		topo_reverse_calculated_point_1.add(lbli_9, gbc_lbli_9);
+		
+		topo_reverse_calculated_degreeMesta_1 = new JTextField();
+		topo_reverse_calculated_degreeMesta_1.setText("000");
+		topo_reverse_calculated_degreeMesta_1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_degreeMesta_1 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_degreeMesta_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_degreeMesta_1.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_calculated_degreeMesta_1.gridx = 1;
+		gbc_topo_reverse_calculated_degreeMesta_1.gridy = 5;
+		topo_reverse_calculated_point_1.add(topo_reverse_calculated_degreeMesta_1, gbc_topo_reverse_calculated_degreeMesta_1);
+		
+		topo_reverse_calculated_degreeMesta_2 = new JTextField();
+		topo_reverse_calculated_degreeMesta_2.setText("000");
+		topo_reverse_calculated_degreeMesta_2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_degreeMesta_2 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_degreeMesta_2.insets = new Insets(0, 0, 5, 0);
+		gbc_topo_reverse_calculated_degreeMesta_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_degreeMesta_2.gridx = 2;
+		gbc_topo_reverse_calculated_degreeMesta_2.gridy = 5;
+		topo_reverse_calculated_point_1.add(topo_reverse_calculated_degreeMesta_2, gbc_topo_reverse_calculated_degreeMesta_2);
+		
+		topo_reverse_calculated_point_2 = new JPanel();
+		topo_reverse_calculated_point_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0414\u0440\u0443\u0433\u0430 \u0442\u043E\u0447\u043A\u0430", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		topo_reverse_calculated_point_2.setBounds(320, 291, 142, 113);
+		panel_calculatedDegrees.add(topo_reverse_calculated_point_2);
+		GridBagLayout gbl_topo_reverse_calculated_point_2 = new GridBagLayout();
+		gbl_topo_reverse_calculated_point_2.columnWidths = new int[] {50, 50};
+		gbl_topo_reverse_calculated_point_2.rowHeights = new int[] {30, 30, 30};
+		gbl_topo_reverse_calculated_point_2.columnWeights = new double[]{0.0, 1.0};
+		gbl_topo_reverse_calculated_point_2.rowWeights = new double[]{0.0, 0.0, 0.0};
+		topo_reverse_calculated_point_2.setLayout(gbl_topo_reverse_calculated_point_2);
+		
+		label_125 = new JLabel("X");
+		GridBagConstraints gbc_label_125 = new GridBagConstraints();
+		gbc_label_125.insets = new Insets(0, 0, 5, 5);
+		gbc_label_125.gridx = 0;
+		gbc_label_125.gridy = 1;
+		topo_reverse_calculated_point_2.add(label_125, gbc_label_125);
+		
+		topo_reverse_calculated_X2 = new JTextField();
+		topo_reverse_calculated_X2.setText("000");
+		topo_reverse_calculated_X2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_X2 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_X2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_X2.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_calculated_X2.insets = new Insets(0, 0, 5, 0);
+		gbc_topo_reverse_calculated_X2.gridx = 1;
+		gbc_topo_reverse_calculated_X2.gridy = 1;
+		topo_reverse_calculated_point_2.add(topo_reverse_calculated_X2, gbc_topo_reverse_calculated_X2);
+		
+		label_126 = new JLabel("Y");
+		GridBagConstraints gbc_label_126 = new GridBagConstraints();
+		gbc_label_126.insets = new Insets(0, 0, 0, 5);
+		gbc_label_126.gridx = 0;
+		gbc_label_126.gridy = 2;
+		topo_reverse_calculated_point_2.add(label_126, gbc_label_126);
+		
+		topo_reverse_calculated_Y2 = new JTextField();
+		topo_reverse_calculated_Y2.setText("000");
+		topo_reverse_calculated_Y2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_Y2 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_Y2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_Y2.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_calculated_Y2.gridx = 1;
+		gbc_topo_reverse_calculated_Y2.gridy = 2;
+		topo_reverse_calculated_point_2.add(topo_reverse_calculated_Y2, gbc_topo_reverse_calculated_Y2);
+		
+		topo_reverse_calculated_point_3 = new JPanel();
+		topo_reverse_calculated_point_3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0422\u0440\u0435\u0442\u044F \u0442\u043E\u0447\u043A\u0430", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		topo_reverse_calculated_point_3.setBounds(473, 291, 142, 113);
+		panel_calculatedDegrees.add(topo_reverse_calculated_point_3);
+		GridBagLayout gbl_topo_reverse_calculated_point_3 = new GridBagLayout();
+		gbl_topo_reverse_calculated_point_3.columnWidths = new int[] {50, 50};
+		gbl_topo_reverse_calculated_point_3.rowHeights = new int[] {30, 30, 30};
+		gbl_topo_reverse_calculated_point_3.columnWeights = new double[]{0.0, 1.0};
+		gbl_topo_reverse_calculated_point_3.rowWeights = new double[]{0.0, 0.0, 0.0};
+		topo_reverse_calculated_point_3.setLayout(gbl_topo_reverse_calculated_point_3);
+		
+		label_127 = new JLabel("X");
+		GridBagConstraints gbc_label_127 = new GridBagConstraints();
+		gbc_label_127.insets = new Insets(0, 0, 5, 5);
+		gbc_label_127.gridx = 0;
+		gbc_label_127.gridy = 1;
+		topo_reverse_calculated_point_3.add(label_127, gbc_label_127);
+		
+		topo_reverse_calculated_X3 = new JTextField();
+		topo_reverse_calculated_X3.setText("000");
+		topo_reverse_calculated_X3.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_X3 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_X3.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_X3.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_calculated_X3.insets = new Insets(0, 0, 5, 0);
+		gbc_topo_reverse_calculated_X3.gridx = 1;
+		gbc_topo_reverse_calculated_X3.gridy = 1;
+		topo_reverse_calculated_point_3.add(topo_reverse_calculated_X3, gbc_topo_reverse_calculated_X3);
+		
+		label_128 = new JLabel("Y");
+		GridBagConstraints gbc_label_128 = new GridBagConstraints();
+		gbc_label_128.insets = new Insets(0, 0, 0, 5);
+		gbc_label_128.gridx = 0;
+		gbc_label_128.gridy = 2;
+		topo_reverse_calculated_point_3.add(label_128, gbc_label_128);
+		
+		topo_reverse_calculated_Y3 = new JTextField();
+		topo_reverse_calculated_Y3.setText("000");
+		topo_reverse_calculated_Y3.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_Y3 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_Y3.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_Y3.anchor = GridBagConstraints.NORTH;
+		gbc_topo_reverse_calculated_Y3.gridx = 1;
+		gbc_topo_reverse_calculated_Y3.gridy = 2;
+		topo_reverse_calculated_point_3.add(topo_reverse_calculated_Y3, gbc_topo_reverse_calculated_Y3);
+		
+		button_5 = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		button_5.setForeground(Color.WHITE);
+		button_5.setBackground(new Color(0, 0, 205));
+		button_5.setBounds(501, 442, 114, 39);
+		panel_calculatedDegrees.add(button_5);
+		
+		panel_13 = new JPanel();
+		panel_13.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0413\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0430\u043B\u044C\u043Di \u043A\u0443\u0442\u0438", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel_13.setBounds(20, 368, 277, 113);
+		panel_calculatedDegrees.add(panel_13);
+		GridBagLayout gbl_panel_13 = new GridBagLayout();
+		gbl_panel_13.columnWidths = new int[] {80, 50, 50};
+		gbl_panel_13.rowHeights = new int[] {30, 30, 30};
+		gbl_panel_13.columnWeights = new double[]{0.0, 1.0, 1.0};
+		gbl_panel_13.rowWeights = new double[]{0.0, 0.0, 0.0};
+		panel_13.setLayout(gbl_panel_13);
+		
+		label_129 = new JLabel("\u041F\u0435\u0440\u0448\u0438\u0439");
+		GridBagConstraints gbc_label_129 = new GridBagConstraints();
+		gbc_label_129.insets = new Insets(0, 0, 5, 5);
+		gbc_label_129.gridx = 0;
+		gbc_label_129.gridy = 1;
+		panel_13.add(label_129, gbc_label_129);
+		
+		topo_reverse_calculated_degreeHorizontal1_1 = new JTextField();
+		topo_reverse_calculated_degreeHorizontal1_1.setText("000");
+		topo_reverse_calculated_degreeHorizontal1_1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_degreeHorizontal1_1 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_degreeHorizontal1_1.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_reverse_calculated_degreeHorizontal1_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_degreeHorizontal1_1.gridx = 1;
+		gbc_topo_reverse_calculated_degreeHorizontal1_1.gridy = 1;
+		panel_13.add(topo_reverse_calculated_degreeHorizontal1_1, gbc_topo_reverse_calculated_degreeHorizontal1_1);
+		
+		topo_reverse_calculated_degreeHorizontal1_2 = new JTextField();
+		topo_reverse_calculated_degreeHorizontal1_2.setText("000");
+		topo_reverse_calculated_degreeHorizontal1_2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_degreeHorizontal1_2 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_degreeHorizontal1_2.insets = new Insets(0, 0, 5, 0);
+		gbc_topo_reverse_calculated_degreeHorizontal1_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_degreeHorizontal1_2.gridx = 2;
+		gbc_topo_reverse_calculated_degreeHorizontal1_2.gridy = 1;
+		panel_13.add(topo_reverse_calculated_degreeHorizontal1_2, gbc_topo_reverse_calculated_degreeHorizontal1_2);
+		
+		label_130 = new JLabel("\u0414\u0440\u0443\u0433\u0438\u0439");
+		GridBagConstraints gbc_label_130 = new GridBagConstraints();
+		gbc_label_130.insets = new Insets(0, 0, 0, 5);
+		gbc_label_130.gridx = 0;
+		gbc_label_130.gridy = 2;
+		panel_13.add(label_130, gbc_label_130);
+		
+		topo_reverse_calculated_degreeHorizontal2_1 = new JTextField();
+		topo_reverse_calculated_degreeHorizontal2_1.setText("000");
+		topo_reverse_calculated_degreeHorizontal2_1.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_degreeHorizontal2_1 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_degreeHorizontal2_1.insets = new Insets(0, 0, 0, 5);
+		gbc_topo_reverse_calculated_degreeHorizontal2_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_degreeHorizontal2_1.gridx = 1;
+		gbc_topo_reverse_calculated_degreeHorizontal2_1.gridy = 2;
+		panel_13.add(topo_reverse_calculated_degreeHorizontal2_1, gbc_topo_reverse_calculated_degreeHorizontal2_1);
+		
+		topo_reverse_calculated_degreeHorizontal2_2 = new JTextField();
+		topo_reverse_calculated_degreeHorizontal2_2.setText("000");
+		topo_reverse_calculated_degreeHorizontal2_2.setColumns(10);
+		GridBagConstraints gbc_topo_reverse_calculated_degreeHorizontal2_2 = new GridBagConstraints();
+		gbc_topo_reverse_calculated_degreeHorizontal2_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_reverse_calculated_degreeHorizontal2_2.gridx = 2;
+		gbc_topo_reverse_calculated_degreeHorizontal2_2.gridy = 2;
+		panel_13.add(topo_reverse_calculated_degreeHorizontal2_2, gbc_topo_reverse_calculated_degreeHorizontal2_2);
 		
 		panel_MERED = new JPanel();
 		tabbedPane_TOPO.addTab("Визначення зближення мередiанiв", null, panel_MERED, null);
