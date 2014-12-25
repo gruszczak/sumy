@@ -28,6 +28,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.Icon;
+import javax.swing.UIManager;
 
 //dfdsfdsfds
 public class Main extends JFrame {
@@ -221,6 +223,90 @@ public class Main extends JFrame {
 	private JTextField topo_pgz_hB;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private CalculateClass cs;
+	private JTextField topo_ogz_alphaA;
+	private JTextField topo_ogz_Xa;
+	private JTextField topo_ogz_Ya;
+	private JTextField topo_ogz_hA;
+	private JTextField topo_ogz_mA;
+	private JTextField topo_ogz_D;
+	private JTextField topo_ogz_hB;
+	private JTextField topo_ogz_Yb;
+	private JTextField topo_ogz_Xb;
+	private JPanel topo_convcoord_input;
+	private JLabel lblXa;
+	private JTextField topo_convcoord_Xa;
+	private JLabel lblYa;
+	private JTextField topo_convcoord_Ya;
+	private JPanel panel_6;
+	private JLabel label_77;
+	private JTextField topo_zone_Xa;
+	private JLabel label_78;
+	private JTextField topo_zone_Ya;
+	private JButton topo_zone_buttonCalc;
+	private JPanel panel_7;
+	private JLabel lblXb_1;
+	private JTextField topo_zone_Xb;
+	private JLabel lblYb_1;
+	private JTextField topo_zone_Yb;
+	private JLabel label_84;
+	private JLabel label_85;
+	private JPanel panel_8;
+	private JLabel lblXa_1;
+	private JTextField topo_zone_Xa_result;
+	private JLabel lblYa_1;
+	private JTextField topo_zone_Ya_result;
+	private JButton topo_zone_buttonSave;
+	private JLabel lblA;
+	private JTextField topo_zone_dA_result;
+	private JButton topo_convcoord_buttonCalcGEODEZ;
+	private JButton topo_convcoord_buttonCalcSQUARE;
+	private JLabel label_86;
+	private JLabel label_93;
+	private JPanel topo_convcoord_output;
+	private JLabel label_94;
+	private JTextField topo_convcoord_Xa_result;
+	private JLabel label_95;
+	private JTextField topo_convcoord_Ya_result;
+	private JLabel topo_convcoord_input_title;
+	private JLabel topo_convcoord_output_title;
+	private JLabel label_96;
+	private JLabel label_97;
+	private JTextField topo_mered_B_grad;
+	private JButton button_3;
+	private JLabel label_99;
+	private JPanel panel_9;
+	private JLabel lblXa_2;
+	private JTextField topo_mered_gamma_GEOresult;
+	private JLabel label_98;
+	private JLabel label_102;
+	private JTextField topo_mered_B_minute;
+	private JTextField topo_mered_B_sec;
+	private JLabel lbliB;
+	private JLabel lbliL;
+	private JTextField topo_mered_L_grad;
+	private JTextField topo_mered_L_minute;
+	private JTextField topo_mered_L_sec;
+	private JPanel panel_4;
+	private JPanel panel_10;
+	private JLabel label_104;
+	private JPanel panel_11;
+	private JLabel lblX_8;
+	private JTextField topo_mered_gamma_X;
+	private JLabel lblY_8;
+	private JTextField topo_mered_gamma_Y;
+	private JButton button_4;
+	private JLabel label_105;
+	private JPanel panel_12;
+	private JLabel label_106;
+	private JTextField topo_mered_gamma_SQUAREresult;
+	private JLabel lblii;
+	private JLabel label_107;
+	private JLabel label_108;
+	private JLabel label_109;
+	private JLabel lbli_7;
+	private JLabel lblii_2;
+	private JPanel panel_imageREVERSE;
+	private JLabel label_110;
 
 	/**
 	 * Launch the application.
@@ -742,7 +828,7 @@ public class Main extends JFrame {
 		label_24 = new JLabel("\u043C\u043C.\u0440\u0442.\u0441\u0442.");
 		GridBagConstraints gbc_label_24 = new GridBagConstraints();
 		gbc_label_24.fill = GridBagConstraints.HORIZONTAL;
-		gbc_label_24.insets = new Insets(0, 0, 5, 0);
+		gbc_label_24.insets = new Insets(0, 0, 5, 5);
 		gbc_label_24.gridx = 2;
 		gbc_label_24.gridy = 1;
 		panel_1.add(label_24, gbc_label_24);
@@ -770,7 +856,7 @@ public class Main extends JFrame {
 		lbli_3 = new JLabel("\u0433\u0440\u0430\u0434. \u0426\u0435\u043B\u044C\u0441i\u044F");
 		GridBagConstraints gbc_lbli_3 = new GridBagConstraints();
 		gbc_lbli_3.fill = GridBagConstraints.HORIZONTAL;
-		gbc_lbli_3.insets = new Insets(0, 0, 5, 0);
+		gbc_lbli_3.insets = new Insets(0, 0, 5, 5);
 		gbc_lbli_3.gridx = 2;
 		gbc_lbli_3.gridy = 2;
 		panel_1.add(lbli_3, gbc_lbli_3);
@@ -798,7 +884,7 @@ public class Main extends JFrame {
 		lbli_4 = new JLabel("\u0432\u0435\u043B\u0438\u043Ai \u043F.\u043A.");
 		GridBagConstraints gbc_lbli_4 = new GridBagConstraints();
 		gbc_lbli_4.anchor = GridBagConstraints.WEST;
-		gbc_lbli_4.insets = new Insets(0, 0, 5, 0);
+		gbc_lbli_4.insets = new Insets(0, 0, 5, 5);
 		gbc_lbli_4.gridx = 2;
 		gbc_lbli_4.gridy = 3;
 		panel_1.add(lbli_4, gbc_lbli_4);
@@ -807,7 +893,7 @@ public class Main extends JFrame {
 		GridBagConstraints gbc_lblii_1 = new GridBagConstraints();
 		gbc_lblii_1.anchor = GridBagConstraints.NORTH;
 		gbc_lblii_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_lblii_1.insets = new Insets(0, 0, 0, 5);
+		gbc_lblii_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblii_1.gridx = 0;
 		gbc_lblii_1.gridy = 4;
 		panel_1.add(lblii_1, gbc_lblii_1);
@@ -816,7 +902,7 @@ public class Main extends JFrame {
 		GridBagConstraints gbc_textField_34 = new GridBagConstraints();
 		gbc_textField_34.anchor = GridBagConstraints.NORTH;
 		gbc_textField_34.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_34.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_34.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_34.gridx = 1;
 		gbc_textField_34.gridy = 4;
 		panel_1.add(textField_34, gbc_textField_34);
@@ -1634,6 +1720,9 @@ public class Main extends JFrame {
 		Image myPicture = null;
 		myPicture = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/pgz.png"));
 		
+		Image myPicture1 = null;
+		myPicture1 = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/zasichku.png"));
+		
 		panel_PGZ = new JPanel();
 		tabbedPane_TOPO.addTab("Пряма геодезична задача", null, panel_PGZ, null);
 		panel_PGZ.setLayout(null);
@@ -1745,9 +1834,10 @@ public class Main extends JFrame {
 		lblPgzimage.setText("");
 		lblPgzimage.setBackground(Color.WHITE);
 		
-		JLabel lblHa = new JLabel("hA=");
-		lblHa.setBounds(513, 101, 28, 14);
-		panel_PGZ.add(lblHa);
+		
+		JLabel label_topo_pgz_hA = new JLabel("hA=");
+		label_topo_pgz_hA.setBounds(513, 101, 28, 14);
+		panel_PGZ.add(label_topo_pgz_hA);
 		
 		topo_pgz_hA = new JTextField();
 		topo_pgz_hA.setText("0");
@@ -1846,21 +1936,767 @@ public class Main extends JFrame {
 		
 		panel_OGZ = new JPanel();
 		tabbedPane_TOPO.addTab("Обернена геодезична задача", null, panel_OGZ, null);
+		panel_OGZ.setLayout(null);
+		
+		JLabel topo_ogz_labelCaption = new JLabel("\u041E\u0431\u0435\u0440\u043D\u0435\u043D\u0430 \u0433\u0435\u043E\u0434\u0435\u0437\u0438\u0447\u043D\u0430 \u0437\u0430\u0434\u0430\u0447\u0430");
+		topo_ogz_labelCaption.setForeground(Color.BLUE);
+		topo_ogz_labelCaption.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		topo_ogz_labelCaption.setBounds(10, 11, 300, 14);
+		panel_OGZ.add(topo_ogz_labelCaption);
+		
+		JLabel label_79 = new JLabel("\u0412\u0445i\u0434\u043Di \u0434\u0430\u043Di:");
+		label_79.setForeground(new Color(128, 0, 0));
+		label_79.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_79.setBounds(444, 28, 95, 14);
+		panel_OGZ.add(label_79);
+		
+		JLabel label_80 = new JLabel("\u041A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u0438 \u0442\u043E\u0447\u043A\u0438 \u0410:");
+		label_80.setForeground(Color.BLUE);
+		label_80.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		label_80.setBounds(339, 73, 300, 14);
+		panel_OGZ.add(label_80);
+		
+		JLabel label_81 = new JLabel("\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:");
+		label_81.setForeground(new Color(128, 0, 0));
+		label_81.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_81.setBounds(444, 293, 95, 14);
+		panel_OGZ.add(label_81);
+		
+		JLabel label_82 = new JLabel("\u041F\u043E\u043B\u044F\u0440\u043Di \u043A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u0438 \u0442\u043E\u0447\u043A\u0438 B:");
+		label_82.setForeground(Color.BLUE);
+		label_82.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		label_82.setBounds(339, 328, 300, 14);
+		panel_OGZ.add(label_82);
+		
+		JLabel label_83 = new JLabel("alpha A=");
+		label_83.setBounds(339, 356, 69, 14);
+		panel_OGZ.add(label_83);
+		
+		topo_ogz_alphaA = new JTextField();
+		topo_ogz_alphaA.setText("0");
+		topo_ogz_alphaA.setColumns(10);
+		topo_ogz_alphaA.setBounds(397, 353, 39, 20);
+		panel_OGZ.add(topo_ogz_alphaA);
+		
+		topo_ogz_Xa = new JTextField();
+		topo_ogz_Xa.setText("0");
+		topo_ogz_Xa.setColumns(10);
+		topo_ogz_Xa.setBounds(369, 98, 39, 20);
+		panel_OGZ.add(topo_ogz_Xa);
+		
+		JLabel label_topo_ogz_Xa = new JLabel("Xa=");
+		label_topo_ogz_Xa.setBounds(339, 101, 28, 14);
+		panel_OGZ.add(label_topo_ogz_Xa);
+		
+		JLabel label_topo_ogz_Ya = new JLabel("Ya=");
+		label_topo_ogz_Ya.setBounds(426, 101, 28, 14);
+		panel_OGZ.add(label_topo_ogz_Ya);
+		
+		topo_ogz_Ya = new JTextField();
+		topo_ogz_Ya.setText("0");
+		topo_ogz_Ya.setColumns(10);
+		topo_ogz_Ya.setBounds(453, 98, 39, 20);
+		panel_OGZ.add(topo_ogz_Ya);
+		
+		JLabel label_topo_ogz_hA = new JLabel("hA=");
+		label_topo_ogz_hA.setBounds(513, 101, 28, 14);
+		panel_OGZ.add(label_topo_ogz_hA);
+		
+		topo_ogz_hA = new JTextField();
+		topo_ogz_hA.setText("0");
+		topo_ogz_hA.setColumns(10);
+		topo_ogz_hA.setBounds(542, 98, 39, 20);
+		panel_OGZ.add(topo_ogz_hA);
+		
+		topo_ogz_mA = new JTextField();
+		topo_ogz_mA.setText("0");
+		topo_ogz_mA.setColumns(10);
+		topo_ogz_mA.setBounds(557, 353, 39, 20);
+		panel_OGZ.add(topo_ogz_mA);
+		
+		JLabel label_87 = new JLabel("mA=");
+		label_87.setBounds(527, 356, 39, 14);
+		panel_OGZ.add(label_87);
+		
+		topo_ogz_D = new JTextField();
+		topo_ogz_D.setText("0");
+		topo_ogz_D.setColumns(10);
+		topo_ogz_D.setBounds(478, 353, 39, 20);
+		panel_OGZ.add(topo_ogz_D);
+		
+		JLabel label_88 = new JLabel("\u0414=");
+		label_88.setBounds(453, 356, 28, 14);
+		panel_OGZ.add(label_88);
+		
+		JButton topo_ogz_buttonCalc = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		topo_ogz_buttonCalc.setForeground(Color.WHITE);
+		topo_ogz_buttonCalc.setBackground(new Color(0, 0, 205));
+		topo_ogz_buttonCalc.setBounds(426, 225, 151, 39);
+		panel_OGZ.add(topo_ogz_buttonCalc);
+		
+		topo_ogz_hB = new JTextField();
+		topo_ogz_hB.setText("0");
+		topo_ogz_hB.setColumns(10);
+		topo_ogz_hB.setBounds(542, 169, 39, 20);
+		panel_OGZ.add(topo_ogz_hB);
+		
+		JLabel label_89 = new JLabel("hB=");
+		label_89.setBounds(513, 172, 28, 14);
+		panel_OGZ.add(label_89);
+		
+		topo_ogz_Yb = new JTextField();
+		topo_ogz_Yb.setText("0");
+		topo_ogz_Yb.setColumns(10);
+		topo_ogz_Yb.setBounds(453, 169, 39, 20);
+		panel_OGZ.add(topo_ogz_Yb);
+		
+		JLabel label_90 = new JLabel("Yb=");
+		label_90.setBounds(426, 172, 28, 14);
+		panel_OGZ.add(label_90);
+		
+		JLabel label_91 = new JLabel("\u041A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u0438 \u0442\u043E\u0447\u043A\u0438 B:");
+		label_91.setForeground(Color.BLUE);
+		label_91.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		label_91.setBounds(339, 144, 300, 14);
+		panel_OGZ.add(label_91);
+		
+		topo_ogz_Xb = new JTextField();
+		topo_ogz_Xb.setText("0");
+		topo_ogz_Xb.setColumns(10);
+		topo_ogz_Xb.setBounds(369, 169, 39, 20);
+		panel_OGZ.add(topo_ogz_Xb);
+		
+		JLabel label_92 = new JLabel("Xb=");
+		label_92.setBounds(339, 172, 28, 14);
+		panel_OGZ.add(label_92);
+		
+		JButton topo_ogz_buttonSave = new JButton("\u0417\u0431\u0435\u0440\u0435\u0433\u0442\u0438 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442");
+		topo_ogz_buttonSave.setForeground(Color.WHITE);
+		topo_ogz_buttonSave.setBackground(new Color(0, 0, 205));
+		topo_ogz_buttonSave.setBounds(426, 408, 151, 39);
+		panel_OGZ.add(topo_ogz_buttonSave);
+		
+		JPanel panel_imageOGZ = new JPanel();
+		panel_imageOGZ.setBorder(new LineBorder(Color.GRAY, 2));
+		panel_imageOGZ.setBounds(10, 54, 300, 321);
+		panel_OGZ.add(panel_imageOGZ);
+		panel_imageOGZ.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JLabel lblOgzimage = new JLabel(new ImageIcon(myPicture));
+		lblOgzimage.setText("");
+		lblOgzimage.setBackground(Color.WHITE);
+		panel_imageOGZ.add(lblOgzimage);
 		
 		panel_REVERSE = new JPanel();
 		tabbedPane_TOPO.addTab("Оберненi засiчки", null, panel_REVERSE, null);
+		panel_REVERSE.setLayout(null);
+		
+		lblii_2 = new JLabel("\u041E\u0431\u0435\u0440\u043D\u0435\u043Di \u0437\u0430\u0441i\u0447\u043A\u0438");
+		lblii_2.setForeground(Color.BLUE);
+		lblii_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblii_2.setBounds(10, 11, 188, 14);
+		panel_REVERSE.add(lblii_2);
+		
+		panel_imageREVERSE = new JPanel();
+		panel_imageREVERSE.setBorder(new LineBorder(Color.GRAY, 2));
+		panel_imageREVERSE.setBounds(10, 49, 300, 321);
+		panel_REVERSE.add(panel_imageREVERSE);
+		panel_imageREVERSE.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		label_110 = new JLabel(new ImageIcon(myPicture1));
+		label_110.setText("");
+		label_110.setBackground(Color.WHITE);
+		panel_imageREVERSE.add(label_110);
 		
 		panel_MERED = new JPanel();
 		tabbedPane_TOPO.addTab("Визначення зближення мередiанiв", null, panel_MERED, null);
+		panel_MERED.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+		panel_MERED.add(tabbedPane_1);
+		
+		panel_4 = new JPanel();
+		tabbedPane_1.addTab("По географ. координатам", null, panel_4, null);
+		panel_4.setLayout(null);
+		
+		label_96 = new JLabel("\u0412\u0445i\u0434\u043Di \u0434\u0430\u043Di:");
+		label_96.setBounds(95, 34, 95, 14);
+		panel_4.add(label_96);
+		label_96.setForeground(new Color(128, 0, 0));
+		label_96.setFont(new Font("Tahoma", Font.BOLD, 14));
+		
+		button_3 = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		button_3.setBounds(76, 255, 114, 39);
+		panel_4.add(button_3);
+		button_3.setForeground(Color.WHITE);
+		button_3.setBackground(new Color(0, 0, 205));
+		
+		label_99 = new JLabel("\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:");
+		label_99.setBounds(94, 319, 95, 14);
+		panel_4.add(label_99);
+		label_99.setForeground(new Color(128, 0, 0));
+		label_99.setFont(new Font("Tahoma", Font.BOLD, 14));
+		
+		panel_9 = new JPanel();
+		panel_9.setBounds(49, 344, 160, 48);
+		panel_4.add(panel_9);
+		panel_9.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0417\u0431\u043B\u0438\u0436\u0435\u043D\u043D\u044F \u043C\u0435\u0440\u0438\u0434i\u0430\u043Di\u0432", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		GridBagLayout gbl_panel_9 = new GridBagLayout();
+		gbl_panel_9.rowHeights = new int[] {10};
+		gbl_panel_9.columnWidths = new int[] {20, 20};
+		gbl_panel_9.columnWeights = new double[]{0.0, 0.0};
+		gbl_panel_9.rowWeights = new double[]{0.0};
+		panel_9.setLayout(gbl_panel_9);
+		
+		lblXa_2 = new JLabel("\u03B3");
+		GridBagConstraints gbc_lblXa_2 = new GridBagConstraints();
+		gbc_lblXa_2.insets = new Insets(0, 0, 5, 5);
+		gbc_lblXa_2.gridx = 0;
+		gbc_lblXa_2.gridy = 0;
+		panel_9.add(lblXa_2, gbc_lblXa_2);
+		
+		topo_mered_gamma_GEOresult = new JTextField();
+		topo_mered_gamma_GEOresult.setText("0");
+		topo_mered_gamma_GEOresult.setColumns(10);
+		GridBagConstraints gbc_topo_mered_gamma_GEOresult = new GridBagConstraints();
+		gbc_topo_mered_gamma_GEOresult.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_mered_gamma_GEOresult.gridx = 1;
+		gbc_topo_mered_gamma_GEOresult.gridy = 0;
+		panel_9.add(topo_mered_gamma_GEOresult, gbc_topo_mered_gamma_GEOresult);
+		
+		label_97 = new JLabel("\u0433\u0440\u0430\u0434.");
+		label_97.setBounds(28, 95, 46, 14);
+		panel_4.add(label_97);
+		label_97.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		topo_mered_B_grad = new JTextField();
+		topo_mered_B_grad.setBounds(28, 114, 57, 20);
+		panel_4.add(topo_mered_B_grad);
+		topo_mered_B_grad.setText("00");
+		topo_mered_B_grad.setColumns(10);
+		
+		label_98 = new JLabel("\u0445\u0432");
+		label_98.setBounds(117, 95, 28, 14);
+		panel_4.add(label_98);
+		
+		topo_mered_B_minute = new JTextField();
+		topo_mered_B_minute.setBounds(99, 114, 57, 20);
+		panel_4.add(topo_mered_B_minute);
+		topo_mered_B_minute.setText("00");
+		topo_mered_B_minute.setColumns(10);
+		
+		label_102 = new JLabel("\u0441\u0435\u043A");
+		label_102.setBounds(182, 95, 28, 14);
+		panel_4.add(label_102);
+		
+		topo_mered_B_sec = new JTextField();
+		topo_mered_B_sec.setBounds(166, 114, 57, 20);
+		panel_4.add(topo_mered_B_sec);
+		topo_mered_B_sec.setText("00");
+		topo_mered_B_sec.setColumns(10);
+		
+		lbliB = new JLabel("\u0413\u0435\u043E\u0433\u0440\u0430\u0444i\u0447\u043D\u0430 \u0448\u0438\u0440\u043E\u0442\u0430 B");
+		lbliB.setBounds(10, 70, 226, 14);
+		panel_4.add(lbliB);
+		
+		lbliL = new JLabel("\u0413\u0435\u043E\u0433\u0440\u0430\u0444i\u0447\u043D\u0430 \u0434\u043E\u0432\u0433\u043E\u0442\u0430 L");
+		lbliL.setBounds(10, 162, 226, 14);
+		panel_4.add(lbliL);
+		
+		JLabel label_100 = new JLabel("\u0433\u0440\u0430\u0434.");
+		label_100.setBounds(28, 187, 46, 14);
+		panel_4.add(label_100);
+		label_100.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		topo_mered_L_grad = new JTextField();
+		topo_mered_L_grad.setBounds(28, 206, 57, 20);
+		panel_4.add(topo_mered_L_grad);
+		topo_mered_L_grad.setText("00");
+		topo_mered_L_grad.setColumns(10);
+		
+		JLabel label_101 = new JLabel("\u0445\u0432");
+		label_101.setBounds(117, 187, 28, 14);
+		panel_4.add(label_101);
+		
+		topo_mered_L_minute = new JTextField();
+		topo_mered_L_minute.setBounds(99, 206, 57, 20);
+		panel_4.add(topo_mered_L_minute);
+		topo_mered_L_minute.setText("00");
+		topo_mered_L_minute.setColumns(10);
+		
+		JLabel label_103 = new JLabel("\u0441\u0435\u043A");
+		label_103.setBounds(182, 187, 28, 14);
+		panel_4.add(label_103);
+		
+		topo_mered_L_sec = new JTextField();
+		topo_mered_L_sec.setBounds(166, 206, 57, 20);
+		panel_4.add(topo_mered_L_sec);
+		topo_mered_L_sec.setText("00");
+		topo_mered_L_sec.setColumns(10);
+		
+		label_107 = new JLabel("\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0437\u0431\u043B\u0438\u0436\u0435\u043D\u043D\u044F \u043C\u0435\u0440\u0435\u0434i\u0430\u043Di\u0432");
+		label_107.setForeground(Color.BLUE);
+		label_107.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		label_107.setBounds(10, 11, 300, 14);
+		panel_4.add(label_107);
+		
+		panel_10 = new JPanel();
+		tabbedPane_1.addTab("По повним прямокут. координатам", null, panel_10, null);
+		panel_10.setLayout(null);
+		
+		label_104 = new JLabel("\u0412\u0445i\u0434\u043Di \u0434\u0430\u043Di:");
+		label_104.setForeground(new Color(128, 0, 0));
+		label_104.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_104.setBounds(94, 35, 95, 14);
+		panel_10.add(label_104);
+		
+		panel_11 = new JPanel();
+		panel_11.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u041F\u0440\u044F\u043C\u043E\u043A\u0443\u0442\u043Di \u043A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u0438 \u0442\u043E\u0447\u043A\u0438", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel_11.setBounds(36, 71, 193, 108);
+		panel_10.add(panel_11);
+		GridBagLayout gbl_panel_11 = new GridBagLayout();
+		gbl_panel_11.columnWidths = new int[] {50, 50};
+		gbl_panel_11.rowHeights = new int[] {30, 30};
+		gbl_panel_11.columnWeights = new double[]{0.0, 0.0};
+		gbl_panel_11.rowWeights = new double[]{0.0, 0.0, 0.0};
+		panel_11.setLayout(gbl_panel_11);
+		
+		lblX_8 = new JLabel("X");
+		GridBagConstraints gbc_lblX_8 = new GridBagConstraints();
+		gbc_lblX_8.insets = new Insets(0, 0, 5, 5);
+		gbc_lblX_8.gridx = 0;
+		gbc_lblX_8.gridy = 1;
+		panel_11.add(lblX_8, gbc_lblX_8);
+		
+		topo_mered_gamma_X = new JTextField();
+		topo_mered_gamma_X.setText("0000000");
+		topo_mered_gamma_X.setColumns(10);
+		GridBagConstraints gbc_topo_mered_gamma_X = new GridBagConstraints();
+		gbc_topo_mered_gamma_X.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_mered_gamma_X.gridx = 1;
+		gbc_topo_mered_gamma_X.gridy = 1;
+		panel_11.add(topo_mered_gamma_X, gbc_topo_mered_gamma_X);
+		
+		lblY_8 = new JLabel("Y");
+		GridBagConstraints gbc_lblY_8 = new GridBagConstraints();
+		gbc_lblY_8.insets = new Insets(0, 0, 0, 5);
+		gbc_lblY_8.gridx = 0;
+		gbc_lblY_8.gridy = 2;
+		panel_11.add(lblY_8, gbc_lblY_8);
+		
+		topo_mered_gamma_Y = new JTextField();
+		topo_mered_gamma_Y.setText("0000000");
+		topo_mered_gamma_Y.setColumns(10);
+		GridBagConstraints gbc_topo_mered_gamma_Y = new GridBagConstraints();
+		gbc_topo_mered_gamma_Y.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_mered_gamma_Y.gridx = 1;
+		gbc_topo_mered_gamma_Y.gridy = 2;
+		panel_11.add(topo_mered_gamma_Y, gbc_topo_mered_gamma_Y);
+		
+		button_4 = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		button_4.setForeground(Color.WHITE);
+		button_4.setBackground(new Color(0, 0, 205));
+		button_4.setBounds(75, 213, 114, 39);
+		panel_10.add(button_4);
+		
+		label_105 = new JLabel("\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:");
+		label_105.setForeground(new Color(128, 0, 0));
+		label_105.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_105.setBounds(94, 279, 95, 14);
+		panel_10.add(label_105);
+		
+		panel_12 = new JPanel();
+		panel_12.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0417\u0431\u043B\u0438\u0436\u0435\u043D\u043D\u044F \u043C\u0435\u0440\u0438\u0434i\u0430\u043Di\u0432", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel_12.setBounds(52, 305, 160, 48);
+		panel_10.add(panel_12);
+		GridBagLayout gbl_panel_12 = new GridBagLayout();
+		gbl_panel_12.columnWidths = new int[]{20, 20, 0};
+		gbl_panel_12.rowHeights = new int[]{10, 0};
+		gbl_panel_12.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_12.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel_12.setLayout(gbl_panel_12);
+		
+		label_106 = new JLabel("\u03B3");
+		GridBagConstraints gbc_label_106 = new GridBagConstraints();
+		gbc_label_106.insets = new Insets(0, 0, 0, 5);
+		gbc_label_106.gridx = 0;
+		gbc_label_106.gridy = 0;
+		panel_12.add(label_106, gbc_label_106);
+		
+		topo_mered_gamma_SQUAREresult = new JTextField();
+		topo_mered_gamma_SQUAREresult.setText("0");
+		topo_mered_gamma_SQUAREresult.setColumns(10);
+		GridBagConstraints gbc_topo_mered_gamma_SQUAREresult = new GridBagConstraints();
+		gbc_topo_mered_gamma_SQUAREresult.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_mered_gamma_SQUAREresult.gridx = 1;
+		gbc_topo_mered_gamma_SQUAREresult.gridy = 0;
+		panel_12.add(topo_mered_gamma_SQUAREresult, gbc_topo_mered_gamma_SQUAREresult);
+		
+		lblii = new JLabel("\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0437\u0431\u043B\u0438\u0436\u0435\u043D\u043D\u044F \u043C\u0435\u0440\u0435\u0434i\u0430\u043Di\u0432");
+		lblii.setForeground(Color.BLUE);
+		lblii.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblii.setBounds(10, 11, 300, 14);
+		panel_10.add(lblii);
 		
 		panel_ZONE = new JPanel();
 		tabbedPane_TOPO.addTab("Перетворення координат в iншу зону", null, panel_ZONE, null);
+		panel_ZONE.setLayout(null);
+		
+		panel_6 = new JPanel();
+		panel_6.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0412\u041F", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel_6.setBounds(10, 64, 153, 113);
+		panel_ZONE.add(panel_6);
+		GridBagLayout gbl_panel_6 = new GridBagLayout();
+		gbl_panel_6.columnWidths = new int[] {50, 50};
+		gbl_panel_6.rowHeights = new int[] {30, 30, 30};
+		gbl_panel_6.columnWeights = new double[]{0.0, 0.0};
+		gbl_panel_6.rowWeights = new double[]{0.0, 0.0, 0.0};
+		panel_6.setLayout(gbl_panel_6);
+		
+		label_77 = new JLabel("Xa");
+		GridBagConstraints gbc_label_77 = new GridBagConstraints();
+		gbc_label_77.anchor = GridBagConstraints.NORTH;
+		gbc_label_77.insets = new Insets(0, 0, 5, 5);
+		gbc_label_77.gridx = 0;
+		gbc_label_77.gridy = 1;
+		panel_6.add(label_77, gbc_label_77);
+		
+		topo_zone_Xa = new JTextField();
+		topo_zone_Xa.setText("000");
+		topo_zone_Xa.setColumns(10);
+		GridBagConstraints gbc_topo_zone_Xa = new GridBagConstraints();
+		gbc_topo_zone_Xa.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_zone_Xa.anchor = GridBagConstraints.NORTH;
+		gbc_topo_zone_Xa.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_zone_Xa.gridx = 1;
+		gbc_topo_zone_Xa.gridy = 1;
+		panel_6.add(topo_zone_Xa, gbc_topo_zone_Xa);
+		
+		label_78 = new JLabel("Ya");
+		GridBagConstraints gbc_label_78 = new GridBagConstraints();
+		gbc_label_78.anchor = GridBagConstraints.NORTH;
+		gbc_label_78.insets = new Insets(0, 0, 5, 5);
+		gbc_label_78.gridx = 0;
+		gbc_label_78.gridy = 2;
+		panel_6.add(label_78, gbc_label_78);
+		
+		topo_zone_Ya = new JTextField();
+		topo_zone_Ya.setText("000");
+		topo_zone_Ya.setColumns(10);
+		GridBagConstraints gbc_topo_zone_Ya = new GridBagConstraints();
+		gbc_topo_zone_Ya.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_zone_Ya.anchor = GridBagConstraints.NORTH;
+		gbc_topo_zone_Ya.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_zone_Ya.gridx = 1;
+		gbc_topo_zone_Ya.gridy = 2;
+		panel_6.add(topo_zone_Ya, gbc_topo_zone_Ya);
+		
+		topo_zone_buttonCalc = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		topo_zone_buttonCalc.setForeground(Color.WHITE);
+		topo_zone_buttonCalc.setBackground(new Color(0, 0, 205));
+		topo_zone_buttonCalc.setBounds(96, 188, 151, 39);
+		panel_ZONE.add(topo_zone_buttonCalc);
+		
+		panel_7 = new JPanel();
+		panel_7.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0426i\u043B\u044C", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel_7.setBounds(173, 64, 153, 113);
+		panel_ZONE.add(panel_7);
+		GridBagLayout gbl_panel_7 = new GridBagLayout();
+		gbl_panel_7.columnWidths = new int[] {50, 50};
+		gbl_panel_7.rowHeights = new int[] {30, 30, 30};
+		gbl_panel_7.columnWeights = new double[]{0.0, 0.0};
+		gbl_panel_7.rowWeights = new double[]{0.0, 0.0, 0.0};
+		panel_7.setLayout(gbl_panel_7);
+		
+		lblXb_1 = new JLabel("Xb");
+		GridBagConstraints gbc_lblXb_1 = new GridBagConstraints();
+		gbc_lblXb_1.anchor = GridBagConstraints.NORTH;
+		gbc_lblXb_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblXb_1.gridx = 0;
+		gbc_lblXb_1.gridy = 1;
+		panel_7.add(lblXb_1, gbc_lblXb_1);
+		
+		topo_zone_Xb = new JTextField();
+		topo_zone_Xb.setText("000");
+		topo_zone_Xb.setColumns(10);
+		GridBagConstraints gbc_topo_zone_Xb = new GridBagConstraints();
+		gbc_topo_zone_Xb.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_zone_Xb.anchor = GridBagConstraints.NORTH;
+		gbc_topo_zone_Xb.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_zone_Xb.gridx = 1;
+		gbc_topo_zone_Xb.gridy = 1;
+		panel_7.add(topo_zone_Xb, gbc_topo_zone_Xb);
+		
+		lblYb_1 = new JLabel("Yb");
+		GridBagConstraints gbc_lblYb_1 = new GridBagConstraints();
+		gbc_lblYb_1.anchor = GridBagConstraints.NORTH;
+		gbc_lblYb_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblYb_1.gridx = 0;
+		gbc_lblYb_1.gridy = 2;
+		panel_7.add(lblYb_1, gbc_lblYb_1);
+		
+		topo_zone_Yb = new JTextField();
+		topo_zone_Yb.setText("000");
+		topo_zone_Yb.setColumns(10);
+		GridBagConstraints gbc_topo_zone_Yb = new GridBagConstraints();
+		gbc_topo_zone_Yb.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_zone_Yb.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_zone_Yb.anchor = GridBagConstraints.NORTH;
+		gbc_topo_zone_Yb.gridx = 1;
+		gbc_topo_zone_Yb.gridy = 2;
+		panel_7.add(topo_zone_Yb, gbc_topo_zone_Yb);
+		
+		label_84 = new JLabel("\u0412\u0445i\u0434\u043Di \u0434\u0430\u043Di:");
+		label_84.setForeground(new Color(128, 0, 0));
+		label_84.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_84.setBounds(119, 39, 95, 14);
+		panel_ZONE.add(label_84);
+		
+		label_85 = new JLabel("\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:");
+		label_85.setForeground(new Color(128, 0, 0));
+		label_85.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_85.setBounds(130, 257, 95, 14);
+		panel_ZONE.add(label_85);
+		
+		panel_8 = new JPanel();
+		panel_8.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u0412\u041F", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel_8.setBounds(96, 282, 153, 143);
+		panel_ZONE.add(panel_8);
+		GridBagLayout gbl_panel_8 = new GridBagLayout();
+		gbl_panel_8.columnWidths = new int[]{50, 50, 0};
+		gbl_panel_8.rowHeights = new int[] {30, 30, 30, 30};
+		gbl_panel_8.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+		gbl_panel_8.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0};
+		panel_8.setLayout(gbl_panel_8);
+		
+		lblXa_1 = new JLabel("Xa'");
+		GridBagConstraints gbc_lblXa_1 = new GridBagConstraints();
+		gbc_lblXa_1.anchor = GridBagConstraints.NORTH;
+		gbc_lblXa_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblXa_1.gridx = 0;
+		gbc_lblXa_1.gridy = 1;
+		panel_8.add(lblXa_1, gbc_lblXa_1);
+		
+		topo_zone_Xa_result = new JTextField();
+		topo_zone_Xa_result.setText("000");
+		topo_zone_Xa_result.setColumns(10);
+		GridBagConstraints gbc_topo_zone_Xa_result = new GridBagConstraints();
+		gbc_topo_zone_Xa_result.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_zone_Xa_result.anchor = GridBagConstraints.NORTH;
+		gbc_topo_zone_Xa_result.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_zone_Xa_result.gridx = 1;
+		gbc_topo_zone_Xa_result.gridy = 1;
+		panel_8.add(topo_zone_Xa_result, gbc_topo_zone_Xa_result);
+		
+		lblYa_1 = new JLabel("Ya'");
+		GridBagConstraints gbc_lblYa_1 = new GridBagConstraints();
+		gbc_lblYa_1.anchor = GridBagConstraints.NORTH;
+		gbc_lblYa_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblYa_1.gridx = 0;
+		gbc_lblYa_1.gridy = 2;
+		panel_8.add(lblYa_1, gbc_lblYa_1);
+		
+		topo_zone_Ya_result = new JTextField();
+		topo_zone_Ya_result.setText("000");
+		topo_zone_Ya_result.setColumns(10);
+		GridBagConstraints gbc_topo_zone_Ya_result = new GridBagConstraints();
+		gbc_topo_zone_Ya_result.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_zone_Ya_result.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_zone_Ya_result.anchor = GridBagConstraints.NORTH;
+		gbc_topo_zone_Ya_result.gridx = 1;
+		gbc_topo_zone_Ya_result.gridy = 2;
+		panel_8.add(topo_zone_Ya_result, gbc_topo_zone_Ya_result);
+		
+		lblA = new JLabel("\u0394a");
+		GridBagConstraints gbc_lblA = new GridBagConstraints();
+		gbc_lblA.insets = new Insets(0, 0, 5, 5);
+		gbc_lblA.gridx = 0;
+		gbc_lblA.gridy = 3;
+		panel_8.add(lblA, gbc_lblA);
+		
+		topo_zone_dA_result = new JTextField();
+		topo_zone_dA_result.setText("0-00");
+		topo_zone_dA_result.setColumns(10);
+		GridBagConstraints gbc_topo_zone_dA_result = new GridBagConstraints();
+		gbc_topo_zone_dA_result.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_zone_dA_result.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_zone_dA_result.gridx = 1;
+		gbc_topo_zone_dA_result.gridy = 3;
+		panel_8.add(topo_zone_dA_result, gbc_topo_zone_dA_result);
+		
+		topo_zone_buttonSave = new JButton("\u0417\u0431\u0435\u0440\u0435\u0433\u0442\u0438 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442");
+		topo_zone_buttonSave.setForeground(Color.WHITE);
+		topo_zone_buttonSave.setBackground(new Color(0, 0, 205));
+		topo_zone_buttonSave.setBounds(96, 449, 151, 39);
+		panel_ZONE.add(topo_zone_buttonSave);
+		
+		label_108 = new JLabel("\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u043A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442 \u0432 i\u043D\u0448\u0443 \u0437\u043E\u043D\u0443");
+		label_108.setForeground(Color.BLUE);
+		label_108.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		label_108.setBounds(10, 14, 300, 14);
+		panel_ZONE.add(label_108);
 		
 		panel_CONVCOORD = new JPanel();
 		tabbedPane_TOPO.addTab("Перетвор. прямокут. коорд. в геодезичнi та навпаки", null, panel_CONVCOORD, null);
+		panel_CONVCOORD.setLayout(null);
+		
+		topo_convcoord_input = new JPanel();
+		topo_convcoord_input.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		topo_convcoord_input.setBounds(52, 90, 140, 65);
+		panel_CONVCOORD.add(topo_convcoord_input);
+		GridBagLayout gbl_topo_convcoord_input = new GridBagLayout();
+		gbl_topo_convcoord_input.columnWidths = new int[] {50, 50};
+		gbl_topo_convcoord_input.rowHeights = new int[] {30, 30};
+		gbl_topo_convcoord_input.columnWeights = new double[]{0.0, 0.0};
+		gbl_topo_convcoord_input.rowWeights = new double[]{0.0, 0.0};
+		topo_convcoord_input.setLayout(gbl_topo_convcoord_input);
+		
+		lblXa = new JLabel("Xa");
+		GridBagConstraints gbc_lblXa = new GridBagConstraints();
+		gbc_lblXa.anchor = GridBagConstraints.NORTH;
+		gbc_lblXa.insets = new Insets(0, 0, 5, 5);
+		gbc_lblXa.gridx = 0;
+		gbc_lblXa.gridy = 0;
+		topo_convcoord_input.add(lblXa, gbc_lblXa);
+		
+		topo_convcoord_Xa = new JTextField();
+		topo_convcoord_Xa.setText("000");
+		topo_convcoord_Xa.setColumns(10);
+		GridBagConstraints gbc_topo_convcoord_Xa = new GridBagConstraints();
+		gbc_topo_convcoord_Xa.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_convcoord_Xa.anchor = GridBagConstraints.NORTH;
+		gbc_topo_convcoord_Xa.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_convcoord_Xa.gridx = 1;
+		gbc_topo_convcoord_Xa.gridy = 0;
+		topo_convcoord_input.add(topo_convcoord_Xa, gbc_topo_convcoord_Xa);
+		
+		lblYa = new JLabel("Ya");
+		GridBagConstraints gbc_lblYa = new GridBagConstraints();
+		gbc_lblYa.anchor = GridBagConstraints.NORTH;
+		gbc_lblYa.insets = new Insets(0, 0, 5, 5);
+		gbc_lblYa.gridx = 0;
+		gbc_lblYa.gridy = 1;
+		topo_convcoord_input.add(lblYa, gbc_lblYa);
+		
+		topo_convcoord_Ya = new JTextField();
+		topo_convcoord_Ya.setText("000");
+		topo_convcoord_Ya.setColumns(10);
+		GridBagConstraints gbc_topo_convcoord_Ya = new GridBagConstraints();
+		gbc_topo_convcoord_Ya.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_convcoord_Ya.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_convcoord_Ya.anchor = GridBagConstraints.NORTH;
+		gbc_topo_convcoord_Ya.gridx = 1;
+		gbc_topo_convcoord_Ya.gridy = 1;
+		topo_convcoord_input.add(topo_convcoord_Ya, gbc_topo_convcoord_Ya);
+		
+		topo_convcoord_buttonCalcGEODEZ = new JButton("\u0412 \u0433\u0435\u043E\u0434\u0435\u0437\u0438\u0447\u043Di");
+		topo_convcoord_buttonCalcGEODEZ.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				topo_convcoord_input_title.setText("Прямокутнi координати:");
+				topo_convcoord_output_title.setText("Геодезичнi координати:");
+			}
+		});
+		topo_convcoord_buttonCalcGEODEZ.setForeground(Color.WHITE);
+		topo_convcoord_buttonCalcGEODEZ.setBackground(new Color(0, 0, 205));
+		topo_convcoord_buttonCalcGEODEZ.setBounds(10, 184, 114, 39);
+		panel_CONVCOORD.add(topo_convcoord_buttonCalcGEODEZ);
+		
+		topo_convcoord_buttonCalcSQUARE = new JButton("\u0412 \u043F\u0440\u044F\u043C\u043E\u043A\u0443\u0442\u043Di");
+		topo_convcoord_buttonCalcSQUARE.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				topo_convcoord_input_title.setText("Геодезичнi координати:");
+				topo_convcoord_output_title.setText("Прямокутнi координати:");
+			}
+		});
+		topo_convcoord_buttonCalcSQUARE.setForeground(Color.WHITE);
+		topo_convcoord_buttonCalcSQUARE.setBackground(new Color(0, 0, 205));
+		topo_convcoord_buttonCalcSQUARE.setBounds(134, 184, 114, 39);
+		panel_CONVCOORD.add(topo_convcoord_buttonCalcSQUARE);
+		
+		label_86 = new JLabel("\u0412\u0445i\u0434\u043Di \u0434\u0430\u043Di:");
+		label_86.setForeground(new Color(128, 0, 0));
+		label_86.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_86.setBounds(84, 37, 95, 14);
+		panel_CONVCOORD.add(label_86);
+		
+		label_93 = new JLabel("\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:");
+		label_93.setForeground(new Color(128, 0, 0));
+		label_93.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_93.setBounds(84, 246, 95, 14);
+		panel_CONVCOORD.add(label_93);
+		
+		topo_convcoord_output = new JPanel();
+		topo_convcoord_output.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		topo_convcoord_output.setBounds(52, 296, 140, 65);
+		panel_CONVCOORD.add(topo_convcoord_output);
+		GridBagLayout gbl_topo_convcoord_output = new GridBagLayout();
+		gbl_topo_convcoord_output.columnWidths = new int[] {50, 50};
+		gbl_topo_convcoord_output.rowHeights = new int[] {30, 30};
+		gbl_topo_convcoord_output.columnWeights = new double[]{0.0, 0.0};
+		gbl_topo_convcoord_output.rowWeights = new double[]{0.0, 0.0};
+		topo_convcoord_output.setLayout(gbl_topo_convcoord_output);
+		
+		label_94 = new JLabel("Xa");
+		GridBagConstraints gbc_label_94 = new GridBagConstraints();
+		gbc_label_94.anchor = GridBagConstraints.NORTH;
+		gbc_label_94.insets = new Insets(0, 0, 5, 5);
+		gbc_label_94.gridx = 0;
+		gbc_label_94.gridy = 0;
+		topo_convcoord_output.add(label_94, gbc_label_94);
+		
+		topo_convcoord_Xa_result = new JTextField();
+		topo_convcoord_Xa_result.setText("000");
+		topo_convcoord_Xa_result.setColumns(10);
+		GridBagConstraints gbc_topo_convcoord_Xa_result = new GridBagConstraints();
+		gbc_topo_convcoord_Xa_result.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_convcoord_Xa_result.anchor = GridBagConstraints.NORTH;
+		gbc_topo_convcoord_Xa_result.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_convcoord_Xa_result.gridx = 1;
+		gbc_topo_convcoord_Xa_result.gridy = 0;
+		topo_convcoord_output.add(topo_convcoord_Xa_result, gbc_topo_convcoord_Xa_result);
+		
+		label_95 = new JLabel("Ya");
+		GridBagConstraints gbc_label_95 = new GridBagConstraints();
+		gbc_label_95.anchor = GridBagConstraints.NORTH;
+		gbc_label_95.insets = new Insets(0, 0, 5, 5);
+		gbc_label_95.gridx = 0;
+		gbc_label_95.gridy = 1;
+		topo_convcoord_output.add(label_95, gbc_label_95);
+		
+		topo_convcoord_Ya_result = new JTextField();
+		topo_convcoord_Ya_result.setText("000");
+		topo_convcoord_Ya_result.setColumns(10);
+		GridBagConstraints gbc_topo_convcoord_Ya_result = new GridBagConstraints();
+		gbc_topo_convcoord_Ya_result.insets = new Insets(0, 0, 5, 5);
+		gbc_topo_convcoord_Ya_result.fill = GridBagConstraints.HORIZONTAL;
+		gbc_topo_convcoord_Ya_result.anchor = GridBagConstraints.NORTH;
+		gbc_topo_convcoord_Ya_result.gridx = 1;
+		gbc_topo_convcoord_Ya_result.gridy = 1;
+		topo_convcoord_output.add(topo_convcoord_Ya_result, gbc_topo_convcoord_Ya_result);
+		
+		topo_convcoord_input_title = new JLabel("");
+		topo_convcoord_input_title.setBounds(52, 65, 196, 14);
+		panel_CONVCOORD.add(topo_convcoord_input_title);
+		
+		topo_convcoord_output_title = new JLabel("");
+		topo_convcoord_output_title.setBounds(52, 271, 196, 14);
+		panel_CONVCOORD.add(topo_convcoord_output_title);
+		
+		label_109 = new JLabel("\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u043F\u0440\u044F\u043C\u043E\u043A\u0443\u0442\u043D\u0438\u0445 \u043A\u043E\u043E\u0440\u0434. \u0432 \u0433\u0435\u043E\u0434\u0435\u0437\u0438\u0447\u043Di \u0442\u0430 \u043D\u0430\u0432\u043F\u0430\u043A\u0438");
+		label_109.setForeground(Color.BLUE);
+		label_109.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		label_109.setBounds(10, 11, 431, 14);
+		panel_CONVCOORD.add(label_109);
 		
 		panel_SUNANGLE = new JPanel();
 		tabbedPane_TOPO.addTab("Визначення дирекцiйного кута сонця", null, panel_SUNANGLE, null);
+		panel_SUNANGLE.setLayout(null);
+		
+		lbli_7 = new JLabel("\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u0438\u0440\u0435\u043A\u0446i\u0439\u043D\u043E\u0433\u043E \u043A\u0443\u0442\u0430 \u0441\u043E\u043D\u0446\u044F");
+		lbli_7.setForeground(Color.BLUE);
+		lbli_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lbli_7.setBounds(10, 11, 301, 14);
+		panel_SUNANGLE.add(lbli_7);
 	}
 
 	private static void addPopup(Component component, final JPopupMenu popup) {
