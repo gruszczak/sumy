@@ -28,7 +28,6 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.Icon;
 import javax.swing.UIManager;
 
 //dfdsfdsfds
@@ -2029,6 +2028,26 @@ public class Main extends JFrame {
 		panel_OGZ.add(label_88);
 		
 		JButton topo_ogz_buttonCalc = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		topo_ogz_buttonCalc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cs = new CalculateClass();
+				int xA, yA, hA, xB, yB, hB;
+				double alpha, dovorot, mestoCeli;
+				xA =Integer.valueOf(topo_ogz_Xa.getText());
+				yA =Integer.valueOf(topo_ogz_Ya.getText());
+				hA =Integer.valueOf(topo_ogz_hA.getText());
+				xB =Integer.valueOf(topo_ogz_Xb.getText());
+				yB =Integer.valueOf(topo_ogz_Yb.getText());
+				hB =Integer.valueOf(topo_ogz_hB.getText());
+				cs.calculateOGZ(xA, yA, xB, yB, hA, hB);
+				alpha = cs.getAlpha();
+				dovorot = cs.getDovorot();
+				mestoCeli = cs.getMestoCeli();
+				topo_ogz_alphaA.setText(String.valueOf(alpha));
+				topo_pgz_D.setText(String.valueOf(dovorot));
+				topo_pgz_mA.setText(String.valueOf(mestoCeli));
+			}
+		});
 		topo_ogz_buttonCalc.setForeground(Color.WHITE);
 		topo_ogz_buttonCalc.setBackground(new Color(0, 0, 205));
 		topo_ogz_buttonCalc.setBounds(426, 225, 151, 39);
@@ -2126,6 +2145,20 @@ public class Main extends JFrame {
 		label_96.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		button_3 = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double b_grad, b_min, b_sec, l_grad, l_min, l_sec, y_result;
+				cs = new CalculateClass();
+				b_grad = Double.valueOf(topo_mered_B_grad.getText());
+				b_min = Double.valueOf(topo_mered_B_minute.getText());
+				b_sec = Double.valueOf(topo_mered_B_sec.getText());
+				l_grad = Double.valueOf(topo_mered_L_grad.getText());
+				l_min = Double.valueOf(topo_mered_L_minute.getText());
+				l_sec = Double.valueOf(topo_mered_L_sec.getText());
+				y_result = cs.calculateMeridian(b_grad, b_min, b_sec, l_grad, l_min, l_sec);
+				topo_mered_gamma_GEOresult.setText(String.valueOf(y_result));
+			}
+		});
 		button_3.setBounds(76, 255, 114, 39);
 		panel_4.add(button_3);
 		button_3.setForeground(Color.WHITE);
@@ -2392,6 +2425,24 @@ public class Main extends JFrame {
 		panel_6.add(topo_zone_Ya, gbc_topo_zone_Ya);
 		
 		topo_zone_buttonCalc = new JButton("\u041E\u0431\u0447\u0438\u0441\u043B\u0438\u0442\u0438");
+		topo_zone_buttonCalc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cs = new CalculateClass();
+				int xA, yA, xB, yB;
+				double X, Y, dLj;
+				xA = Integer.valueOf(topo_zone_Xa.getText());
+				yA = Integer.valueOf(topo_zone_Ya.getText());
+				xB = Integer.valueOf(topo_zone_Xb.getText());
+				yB = Integer.valueOf(topo_zone_Yb.getText());
+				cs.converZZ(xA, yA, xB, yB);
+				X = cs.getNew_xA();
+				Y = cs.getNew_yA();
+				dLj = cs.getCorrectAlpha();
+				topo_zone_Xa_result.setText(String.valueOf(X));
+				topo_zone_Ya_result.setText(String.valueOf(Y));
+				topo_zone_dA_result.setText(String.valueOf(dLj));
+			}
+		});
 		topo_zone_buttonCalc.setForeground(Color.WHITE);
 		topo_zone_buttonCalc.setBackground(new Color(0, 0, 205));
 		topo_zone_buttonCalc.setBounds(96, 188, 151, 39);

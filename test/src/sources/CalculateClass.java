@@ -240,7 +240,7 @@ public class CalculateClass {
 			l_grad = l_grad + l_min;
 
 			N = l_grad / 6 + 1;
-			L0 = 6 * N - 3;
+			L0 = 6 * (int)N - 3;
 			L = (l_grad - L0) * 60;
 			y = L * Math.sin(b_grad * 0.01745);
 			y = y / 3.6;
